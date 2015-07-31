@@ -1,0 +1,2507 @@
+MISSION: 
+The overarching mission of the National Radiation Oncology Registry (NROR) is to improve the 
+care of cancer patients by collecting reliable real-world information on radiation treatment 
+delivery and health outcomes.
+PURPOSE:
+The purpose of the NROR is to enable comparative care for cancer patients with similar profi les 
+and disease states, eventually link comparative care with best outcomes  and quality improvement 
+and create a population-based health services registry. 
+DISEASE SITE:
+Pilot in Prostate Cancer
+DATA DICTIONARY:
+The NROR Prostate Cancer Data Dictionary is a collection of carefully defi ned data elements 
+designed to characterize critical aspects of the treatment of patients with intact prostate 
+cancer with various forms of radiotherapy. The Data Dictionary was developed with guidance 
+from prostate cancer and technical experts, health services researchers, and medical informati-
+cists to provide standardized data elements in 7 major domains: facility characteristics, physician 
+demographics, patient demographics, prostate cancer disease characteristics, medical history and 
+comorbidities, technical radiotherapy and dosimetric data, and clinician-reported outcomes.
+ACKNOWLEDGEMENTS:
+The NROR Prostate Cancer Data Dictionary is comprised of data elements derived from authori-
+tative sources in radiation oncology, including the Radiation Therapy Oncology Group (RTOG) 
+radiotherapy trials, the CaPSURE (Cancer of the Prostate Strategic Urologic Research Endeavor) 
+database, the QUANTEC (Quantitative Analysis of Normal Tissue Eff ects in the Clinic) review of 
+radiotherapy toxicity, the Quality Research in Radiation Oncology  (QRRO)  patterns of care studies, 
+the National Cancer Institute (NCI) Common Toxicity Criteria, AHRQ processes of care elements, 
+the American College of Radiology facility descriptors, SEER (Surveillance, Epidemiology and End 
+Results) Program, the North American Association of Central Cancer Registries (NAACR), and the 
+NCI Thesaurus.
+R O I  N A T I O N A L  R A D I A T I O N  O N C O L O G Y  R E G I S T R Y  D A T A  D I C T I O N A R Y
+NROR Data Dictionary 
+Version 3.0
+NROR
+NATIONAL RADIATION ONCOLOGY REGISTRY
+AN INITIATIVE OF THE ROI IN PARTNERSHIP WITH ASTRO
+Released September 3, 2013
+© Radiation Oncology Institute. All Rights Reserved. CONFIDENTIAL.    |    ROI Main Offi  ce: 8280 Willow Oaks Corporate Dr., Ste 500, Fairfax, VA 22031    |    September 3, 2013
+ NROR Data Dictionary Version 3.0 
+ 
+ 
+ 
+Table of Contents 
+ 
+Version Control .......................................................................................................................... 2 
+Facility Registration ................................................................................................................... 4 
+Physician Registration ............................................................................................................. 12 
+Patient Demographics ............................................................................................................. 15 
+Prostate Cancer Diagnosis ...................................................................................................... 18 
+Treatment Course .................................................................................................................... 25 
+EBRT Prescription ................................................................................................................... 32 
+Brachytherapy Prescription ...................................................................................................... 36 
+Patient Cause of Death............................................................................................................ 40 
+Prostate Cancer Follow-up ...................................................................................................... 43 
+Charlson Comorbidity Index (CCI) ........................................................................................... 53 
+DVH Summary Statistics ......................................................................................................... 60 
+ 
+ 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 1 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ 
+Version Control 
+ 
+Version 3 Updates Effective Date:  September 3, 2013 
+ 
+General Revisions 
+• Formatting was modified to move GatewayName to the bottom for each element and rearrange the 
+location of the data element ID#’s.  
+• Required questions were allocated by “This field is required” added to the instructions. 
+ 
+Facility Registration Form   
+• Combined facility address questions into one data element. The facility street address, city, state, zip 
+code questions were combined into one question, “what is the mailing address of the facility” – ID# 
+1002.   
+• Numbering of the questions changed as questions 1002-1005 were combined and became question 
+1002 as indicated above.  
+• Required fields indicated – ID# 1001, 1002, 1003, 1005, 1006, 1008, 1009, 1011, 1012, 1013, 1015, 
+1016, 1018, 1019, 1021, 1022, 1023, 1024, 1025, 1026, 1027, and 1028.  
+ 
+Physician Registration Form   
+• Required fields indicated – ID# 2001, 2002, 2004, 2005, 2006, 2007, 2008, and 2009.  
+ 
+Patient Demographics Form  
+• Question text was modified for ID# 3006: “what was the patient’s gender” was changed to “what is the 
+patient’s sex”. Instructions for this question were updated to “indicate the biological makeup of the 
+patient’s reproductive anatomy at birth”. The GatewayName was changed to “Sex.” 
+• Required fields indicated – ID# 3001, 3002, 3004, 3005, 3006, 3007, and 3008.  
+ 
+Prostate Cancer Diagnosis Form   
+• Required fields indicated – ID# 4001, 4004, 4005, 4006, 4007, 4008, 4009, 4010, 4011, 4012, 4014, 
+and 4015.  
+• Changed question text for ID# 4005 and 4006 to read “abdomen and/or pelvis”  
+• Changed the coding options for ID# 4013: “what is the tertiary Gleason grade.” Coding options now 
+include Gleason Grade 1, Gleason Grade 2, Gleason Grade 3, Gleason Grade 4, Gleason Grade 5, 
+and Unknown. 
+• Modified question text for ID# 4014. Changed question to read “Is the baseline (prior to the initiation 
+of treatment) Prostate Specific Antigen (PSA) value known”. The GatewayName was changed to 
+“BaselinePSAValueKnown” 
+• Modified question text for ID# 4015. Changed question to read “what was the baseline PSA value 
+prior to the initiation treatment” The GatewayName was changed to “BaselinePSAValue”.  
+• Modified question text for ID# 4016. Changed question to read “what were the units of the baseline 
+PSA value prior to the initiation of treatment”. The GatewayName was changed to 
+“BaselinePSAUnits” 
+• Modified question text for ID# 4017. Changed question to read “what was the date of the baseline 
+PSA value prior to the initiation of treatment”. The GatewayName was changed to “BaselinePSADate” 
+ 
+ 
+ 
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 2 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+Treatment Course Form   
+• Deleted ID# 5017-5019 and renumbered remaining questions. Questions “was image guided 
+radiation therapy (IGRT) used in conjunction with this treatment course”; “please select all image 
+guided radiation therapy (IGRT) types used in this treatment course” and “specify the “Other” IGRT 
+type used in this treatment course” were deleted.  
+• Coding options were modified for ID# 5009. Coding options now include: “< 6 months; 6-11 months; 
+12-24 months; >24 months; Unknown; Indefinite” 
+• Format for ID# 5017 changed from radio button to checkboxes to allow multiple selections. 
+• Required fields indicated – ID# 5002, 5003, 5004, 5008, 5009, 5010, 5011, 5012, 5013, 5014, 5015, 
+and 5017.  
+ 
+EBRT Prescription Form   
+• Additional instructions were added for ID# 6006 – “If more than one prescription/plan is used in this 
+treatment course (e.g. a boost to the prostate), complete an additional EBRT form.  Please note that 
+“Prostate Gland, Seminal Vesicles, and Pelvic Nodes” should be selected for any treatment to the 
+whole pelvis.” 
+• Coding options were modified for ID# 6013 to include “fiducial markers with cone beam CT” as code 
+5. Coding numbers were modified to accommodate this addition.  
+• Required fields indicated – ID# 6001, 6004, 6005, 6006, 6007, 6008, 6009, 6013, and 6015.  
+ 
+Brachytherapy Prescription Form   
+• Required fields indicated – ID# 7010, 7011, and 7012.  
+ 
+Patient Cause of Death Form (previously “Patient Vital Status”) 
+• Renamed the “Patient Vital Status” form to “Patient Cause of Death” form. This form will only appear 
+if code 0 (deceased) for ID# 9004, question “what is the patient’s status” is selected.  
+• Moved ID# 8001-8004 from this form to the Prostate Cancer Follow-up form. Renumbered questions 
+on this form accordingly.   
+• Required fields indicated – ID# 8001 and 8002. 
+ 
+Prostate Cancer Follow-up Form   
+• Modified question text for ID# 9016-9018. Changed the wording in text from “salvage” to “secondary”.  
+• Added an additional coding option to ID# 9017. Coding option “additional hormonal therapy” was 
+added to the list of permissible values.  
+• Required fields indicated – ID# 9001, 9002, 9003, 9004, 9022, 9023, 9024, 9025, 9026, and 9027.  
+ 
+Charlson Comorbidity Index (CCI) Form   
+• No changes 
+ 
+DVH Summary Statistics Form   
+• Modified question text for ID# 11006-11013. New wording for each question is:  
+o ID# 11006-What volume of the bladder received 70 Gy in cc? 
+o ID# 11007-What percentage of the bladder received 70 Gy? 
+o ID# 11008-What volume of the bladder received 40 Gy in cc? 
+o ID# 11009-What percentage of the bladder received 40 Gy? 
+o ID# 11010-What volume of the rectum received 70 Gy in cc? 
+o ID# 11011-What percentage of the rectum received 70 Gy? 
+o ID# 11012-What volume of the rectum received  40 Gy in cc? 
+o ID# 11013-What percentage of the rectum received 40 Gy?    
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 3 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+Data Entry Form: Facility Registration 
+Module NROR Facility Module 
+Parent Entity: Facility 
+Submission Frequency: Once, updated annually 
+Revision Date: August 23, 2013 
+ 
+ID #: 1001 
+Question Text: What is the name of the facility? 
+Instructions: This field is required. 
+Type / Length / Format: Text / Long 
+GatewayName: Facilityname 
+ID #:  1002 
+Question Text: What is the mailing address of the facility? 
+Instructions: This field is required. 
+Facility street address (include building and/or suite, if applicable), City, State, and Zip 
+code.  
+Type / Length / Format: Text  
+Permissible Values: n/a 
+ GatewayName: FacilityMailingAddress 
+ID #:  1003 
+Question Text: What is the facility’s main phone number? 
+Instructions: This field is required. 
+Type / Length / Format: Text / Short / ###-###-#### 
+Permissible Values: n/a 
+GatewayName: FacilityPhoneNumber 
+ID #:  1004 
+Question Text: What is the facility’s main fax number? 
+Instructions:  
+Type / Length / Format: Text / Short / ###-###-#### 
+Permissible Values: n/a 
+GatewayName: FacilityFax 
+ID #:  1005 
+Question Text: Please provide information for the primary contact at this facility. 
+Instructions: This field is required.  
+Provide name, phone number, and email. 
+Type / Length / Format: Text / Short /  
+Permissible Values: n/a 
+GatewayName: PrimaryContact 
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 4 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  1006 
+Question Text: Which of the following best describes your facility type? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+1 Community Hospital 
+2 Freestanding Facility 
+3 Academic Hospital 
+4 NCI-designated Comprehensive Cancer Center 
+5 Veterans Administration Hospital 
+888 Other (specify) 
+ 
+GatewayName: FacilityType 
+ID #:  1007 
+Question Text: Specify the “Other” type that best describes your facility. 
+Instructions: Appears only when “other” is selected in previous question. 
+Type / Length / Format: Text / Short / 
+Permissible Values: n/a 
+GatewayName: OtherFacilityType  
+ID #:  1008 
+Question Text: Is the treatment record completely electronic and no longer recorded in 
+hardcopy? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: ElectronicTreatmentRecord 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 5 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  1009 
+Question Text: Select all electronic health record systems in use by the Radiation Oncology 
+Department at this facility.  
+Instructions: This field is required. 
+Check all that apply. 
+Type / Length / Format: Checkbox - Multiple 
+Permissible Values: Code Description 
+1 ARIA 
+2 MOSAIQ 
+3 ONCOCHART 
+4 Medi Tech 
+5 McKesson 
+6 Epic 
+7 GE Star 
+8 NextGen 
+888 Other (Specify) 
+ 
+GatewayName: EHRSystems 
+ID #:  1010 
+Question Text: Specify the “Other” electronic health record system in use at this facility. 
+Instructions: Appears only when “other” is selected in previous question. 
+Type / Length / Format: Text / Short /  
+Permissible Values: n/a 
+GatewayName: OtherEHR  
+ID #:  1011 
+Question Text: Are simulation images electronic at this facility? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: ElectronicSimImages 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 6 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  1012 
+Question Text: Are port films electronic at this facility? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: ElectronicPortFilms 
+ID #:  1013 
+Question Text: Please select all treatment planning systems in use at this facility.   
+Instructions: This field is required. 
+Check all that apply. 
+Type / Length / Format: Checkbox – Multiple 
+Permissible Values: Code Description 
+1 BrainLab iPlan 
+2 Varian Eclipse 
+3 Nucletron Oncentra 
+4 Philips Pinnacle 
+5 Elekta Xio 
+888 Other (Specify) 
+ 
+GatewayName: TreatmentPlanningSystemsType 
+ID #:  1014 
+Question Text: Specify the “Other” treatment planning system in use at this facility 
+Instructions: Appears only when “other” is selected in previous question. 
+Type / Length / Format: Text / Short /  
+Permissible Values: n/a 
+GatewayName: OtherTPS  
+ID #:  1015 
+Question Text: Are image guided radiation therapy (IGRT) services offered at this facility? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: IGRTOffered 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 7 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  1016 
+Question Text: Please select all image guided radiation therapy (IGRT) services offered at this 
+facility.   
+Instructions: This field is required. 
+Appears only if “Yes” is selected for previous question.  
+Check all that apply. 
+Type / Length / Format: Checkbox – Multiple 
+Permissible Values: Code Description 
+1 MV planar imaging 
+2 kV planar imaging 
+3 MV Cone Beam CT or CT 
+4 kV Cone Beam CT 
+5 CT on rails 
+6 Radio Beacon 
+7 Ultrasound 
+8 MRI 
+888 Other (Specify) 
+ 
+GatewayName: IGRTTypeUsed   
+ID #:  1017 
+Question Text: Specify the “Other” IGRT in use at this facility 
+Instructions: Appears only when “other” is selected in previous question. 
+Type / Length / Format: Text / Short / 
+Permissible Values: n/a 
+GatewayName: OtherIGRT  
+ID #:  1018 
+Question Text: Are immobilization services offered at this facility? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: ImmobilizationOffered 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 8 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  1019 
+Question Text: Please select all immobilization techniques in use at this facility.   
+Instructions: This field is required. 
+Appears only if “Yes” is selected for previous question. Check all that apply. 
+Type / Length / Format: Checkbox – Multiple 
+Permissible Values: Code Description 
+1 Body Mould 
+2 Rectal Balloon 
+3 Leg Fixation 
+888 Other (specify) 
+ 
+GatewayName: ImmobilizationTechniques 
+ID #:  1020 
+Question Text: Specify the “Other” immobilization technique in use at this facility. 
+Instructions: Appears only when “other” is selected in previous question. 
+Type / Length / Format: Text / Short / 
+Permissible Values: n/a 
+GatewayName: OtherImmobilization  
+ID #:  1021 
+Question Text: Please specify the number of MV external beam photon treatment machines 
+in use at this facility. 
+Instructions: This field is required. 
+Type / Length / Format: Integer 
+Permissible Values: n/a 
+GatewayName: NumberOfEBRTMachines 
+ID #:  1022 
+Question Text: Please specify the number of single energy linear accelerators in use at this 
+facility. 
+Instructions: This field is required. 
+Type / Length / Format: Integer 
+Permissible Values: n/a 
+GatewayName: NumberOfSingleEnergyLinacs 
+ID #:  1023 
+Question Text: Please specify the number of multiple energy linear accelerators in use at this 
+facility. 
+Instructions: This field is required. 
+Type / Length / Format: Integer 
+Permissible Values: n/a 
+GatewayName: NumberofMultipleEnergyLinacs 
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 9 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  1024 
+Question Text: Please specify the number of o-ring treatment machines (e.g. Tomotherapy, 
+ViewRay) in use at this facility. 
+Instructions: This field is required. 
+Type / Length / Format: Integer 
+Permissible Values: n/a 
+GatewayName: NumberofORingTreatmentMachines 
+ID #:  1025 
+Question Text: Please specify the number of robotic linear accelerators (e.g. Cyberknife) in 
+use at this facility. 
+Instructions: This field is required. 
+Type / Length / Format: Integer 
+Permissible Values: n/a 
+GatewayName: NumberofRoboticLinacs 
+ID #:  1026 
+Question Text: Please specify the number of proton beam lines in use at this facility. 
+Instructions: This field is required. 
+Type / Length / Format: Integer 
+Permissible Values: n/a 
+GatewayName: NumberofProtonBeamLines 
+ID #:  1027 
+Question Text: Please specify the number of other treatment machines (not specified above) 
+in use at this facility. 
+Instructions: This field is required. 
+Type / Length / Format: Integer 
+Permissible Values: n/a 
+GatewayName: NumberofOtherTreatmentMachines 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 10 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  1028 
+Question Text: How often are chart checks done by the physicists or certified dosimetrists at 
+this facility? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio – single answer 
+Permissible Values: Code Description 
+0 More than weekly 
+1 Weekly 
+2 Biweekly 
+3 Monthly 
+4 Never  
+ 
+GatewayName: ChartChecks 
+ 
+ 
+ 
+ 
+ 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 11 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+Data Entry Form: Physician Registration 
+Module Name: NROR Physician Module 
+Parent Entity: Physician 
+Submission Frequency: Once, updated annually 
+Revision Date: August 23, 2013 
+ 
+ID #:  2001 
+Question Text: What is the physician’s last name? 
+Instructions: This field is required. 
+Type / Length / Format: Text / Long 
+Permissible Values: n/a 
+GatewayName: PhysicianLastName 
+ID #:  2002 
+Question Text: What is the physician’s first name? 
+Instructions: This field is required. 
+Type / Length / Format: Text / Long 
+Permissible Values: n/a 
+GatewayName: PhysicianFirstName 
+ID #:  2003 
+Question Text: What is the physician’s middle name? 
+Instructions: It is acceptable to specify the middle initial. 
+Type / Length / Format: Text / Long 
+Permissible Values: n/a 
+GatewayName: PhysicianMiddleName 
+ID #:  2004 
+Question Text: What is the physician’s national provider identifier (NPI)? 
+Instructions: This field is required. 
+Type / Length / Format: Number (10 digits) 
+Permissible Values: n/a 
+GatewayName: NPI 
+ID #:  2005 
+Question Text: What is the physician’s primary specialty? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Dropdown 
+Permissible Values: Code Description 
+1 Allergy & Immunology 
+2 Anesthesia 
+3 Cardiology 
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 12 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+4 Dermatology 
+5 Emergency Medicine 
+6 Endocrinology and Metabolism 
+7 Family Practice 
+8 Gastroenterology 
+9 General Practice 
+10 Geriatric Medicine 
+11 Gynecology 
+12 Gynecologic Oncology 
+13 Hematology 
+14 Infectious Diseases 
+15 Internal Medicine 
+16 Neonatology 
+17 Nephrology 
+18 Neurology 
+19 Neurological Surgery 
+20 Obstetrics and Gynecology 
+21 Oncology, Medical 
+22 Ophthalmology 
+23 Orthopedic Surgery   
+24 Otorhinolaryngology 
+25 Pathology 
+26 Pediatrics 
+27 Physical Medicine and Rehab 
+28 Plastic Surgery 
+29 Podiatry 
+30 Preventive Medicine 
+31 Psychiatry 
+32 Pulmonary Disease 
+33 Radiology, Diagnostic 
+34 Radiology, Nuclear 
+35 Radiation Oncology 
+36 Rheumatology 
+37 Sports Medicine 
+38 Surgery, General 
+39 Surgery, Hand 
+40 Surgery, Thoracic 
+41 Surgery, Vascular 
+42 Surgery, Colon and Rectal 
+43 Surgery, Urology 
+888 Other 
+ 
+GatewayName: PrimarySpecialty 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 13 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #: 2006 
+Question Text: In what year did this physician complete residency training? 
+Instructions: This field is required. 
+Enter the year in YYYY format. 
+Type / Length / Format: Date / ‘YYYY’ 
+Permissible Values: n/a 
+GatewayName: ResidencyCompletionYear 
+ID #:  2007  
+Question Text: Is this physician board certified in his or her primary specialty? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+2 Pending 
+ 
+GatewayName: BoardCertification 
+ID #:  2008 
+Question Text: In what year was this physician board certified? 
+Instructions: This field is required. 
+Enter the year in YYYY format. 
+Appears only if BoardCertification = “Yes.” 
+Type / Length / Format: Date / ‘YYYY’ 
+Permissible Values: n/a 
+GatewayName: BoardCertificationYear  
+ID #: 2009 
+Question Text: Is this physician currently participating in Maintenance of Certification (MOC)? 
+Instructions: This field is required. 
+Choose one. 
+Appears only if BoardCertification = “Yes”. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+777 Not Applicable 
+ 
+GatewayName: MOC  
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 14 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+Form Name: Patient Demographics 
+Module Name NROR Patient Module 
+Parent Entity: Patient 
+Submission Frequency: Once at the time of initial patient submission 
+Revision Date: August 23, 2013 
+ 
+ID #:  3001 
+Question Text: What is the patient’s last name? 
+Instructions: This field is required. 
+Type / Length / Format: Text / Long 
+Permissible Values: n/a 
+GatewayName: PatientLastName 
+ID #:  3002 
+Question Text: What is the patient’s first name? 
+Instructions: This field is required. 
+Type / Length / Format: Text / Long 
+Permissible Values: n/a 
+GatewayName: PatientFirstName 
+ID #:  3003 
+Question Text: What is the patient’s middle name? 
+Instructions: It is acceptable to specify the middle initial. 
+Type / Length / Format: Text / Long 
+Permissible Values: n/a 
+GatewayName: PatientMiddleName 
+ID #:  3004 
+Question Text: What is the patient’s date of birth in the format MM/DD/YYYY? 
+Instructions: This field is required. 
+Enter the date in the format MM/DD/YYYY. 
+Type / Length / Format: Date / ‘MM/DD/YYYY’ 
+Permissible Values: n/a 
+GatewayName: BirthDate 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 15 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  3005 
+Question Text: What is the patient’s medical record number (MRN)? 
+Instructions: This field is required. 
+Sites may enter a unique patient identifier that is not the medical record number if 
+MRN is not available. 
+Type / Length / Format: Text / Medium  
+Permissible Values: n/a 
+GatewayName: MRN 
+ID #:  3006 
+Question Text: What is the patient’s sex? 
+Instructions: This field is required. 
+Please indicate the biological makeup of the patient’s reproductive anatomy at birth. 
+Type / Length / Format: Radio – Single   
+*Values are coded using NCI Thesaurus concept codes. 
+Permissible Values: Code Description 
+C20197 Male 
+C16576 Female 
+C17998 Decline / Unknown 
+ 
+GatewayName: Sex 
+ID #:  3007 
+Question Text: What is the patient’s ethnicity? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio – Single 
+*Values are coded using NCI Thesaurus concept codes and aligned with: 
+AHRQ report to the Institute of Medicine on Race, Ethnicity, and Language Data 
+Standardization for Health Care Quality Improvement: 
+http://www.ahrq.gov/research/iomracereport/reldata3.htm 
+Office of Management and Budget. 1997 Revisions to the standards for the 
+classification of federal data on race and ethnicity. Federal Register 62:58781-
+58790. 
+Permissible Values: Code Description 
+C17459 Hispanic or Latino 
+C41222 Not Hispanic or Latino 
+C17998 Decline / Unknown 
+ 
+GatewayName: Ethnicity 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 16 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  3008 
+Question Text: What is the patient’s race?  
+Instructions: This field is required. 
+Check all that apply. 
+Type / Length / Format: Checkbox - multiple 
+*Values are coded using NCI Thesaurus concept codes and aligned with: 
+AHRQ report to the Institute of Medicine on Race, Ethnicity, and Language Data 
+Standardization for Health Care Quality Improvement: 
+http://www.ahrq.gov/research/iomracereport/reldata3.htm  
+Office of Management and Budget. 1997 Revisions to the standards for the 
+classification of federal data on race and ethnicity. Federal Register 62:58781-
+58790. 
+Permissible Values: Code Description 
+C41259 American Indian or Alaska Native 
+C41260 Asian 
+C16352 Black or African American 
+C41219 Native Hawaiian or Other Pacific Islander 
+C41261 White 
+C17998 Decline / Unknown 
+ 
+GatewayName: Race 
+ 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 17 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+Data Entry Form: Prostate Cancer Diagnosis 
+Module Name NROR Patient Module 
+Parent Entity: Patient 
+Submission Frequency: Once at the time of initial patient submission for this disease. 
+Revision Date: August 23, 2013 
+ 
+ID #:  4001 
+Question Text: What is the ICD-10-CM diagnosis code for this prostate cancer? 
+Instructions: This field is required. 
+Type / Length / Format: Radio - Single 
+Permissible Values: Code Description 
+C61 Malignant neoplasm of prostate 
+ 
+GatewayName: ICD10CMDiagnosisCode 
+ID #:  4002 
+Question Text: What was the date of the initial diagnostic biopsy? 
+Instructions: Enter the date in the format MM/DD/YYYY. 
+Type / Length / Format: Date / ‘MM/DD/YYYY’ 
+Permissible Values: n/a 
+GatewayName: DiagnosticBiopsyDate 
+ID #:  4003 
+Question Text: What was the date of the initial consultation with the radiation oncologist? 
+Instructions: Enter the date in the format MM/DD/YYYY. 
+Type / Length / Format: Date / ‘MM/DD/YYYY’ 
+Permissible Values: n/a 
+GatewayName: InitialConsultDate 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 18 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  4004 
+Question Text: Indicate the histopathologic type. 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Dropdown – Single 
+*Values are coded using NCI Thesaurus concept codes.  Equivalent/associated 
+ICD-O-3 histology codes are also indicated. 
+Permissible Values: Code 
+NCI       
+Description (ICD-O-3) 
+C2919     Prostate Adenocarcinoma (8140/3) 
+C5596          Acinar Prostate Adenocarcinoma (8550/3) 
+C39880           Acinar Prostate Adenocarcinoma, Atrophic Variant 
+C39882           Acinar Prostate Adenocarcinoma, Foamy Gland Variant 
+C39885           Acinar Prostate Adenocarcinoma, Lymphoepithelioma-
+Like Variant 
+C39884           Acinar Prostate Adenocarcinoma, Oncocytic Variant 
+C39881           Acinar Prostate Adenocarcinoma, Pseudohyperplastic 
+Variant 
+C5530           Acinar Prostate Adenocarcinoma, Sarcomatoid Variant 
+C5535           Acinar Prostate Adenocarcinoma, Signet Ring Variant 
+C5537           Acinar Prostate Mucinous Adenocarcinoma 
+C6813          Prostate Ductal Adenocarcinoma (8500/3) 
+C39895           Prostate Ductal Adenocarcinoma, Cribriform Pattern 
+C39896           Prostate Ductal Adenocarcinoma, Papillary Pattern 
+C39897           Prostate Ductal Adenocarcinoma, Solid Pattern 
+C5539     Prostate Adenoid Cystic Carcinoma (8200/3) 
+C5538     Prostate Adenosquamous Carcinoma (8560/3) 
+C39902   Prostate Basal Cell Carcinoma (8147/3) 
+C6766     Prostate Small Cell Carcinoma (8041/3) 
+C5536     Prostate Squamous Cell Carcinoma (8070/3) 
+C5597     Undifferentiated Prostate Carcinoma (8020/3) 
+C39898   Primary Prostate Urothelial Carcinoma (8120/3) 
+C5533     Prostate Lymphoma (9590/3) 
+C5527     Prostate Myeloid Sarcoma (9930/3) 
+C7731     Prostate Sarcoma (8800/3) 
+ 
+GatewayName: ProstateCancerHistopathologicType 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 19 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  4005 
+Question Text: Was a CT scan of the abdomen and/or pelvis obtained for staging purposes? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio - Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes – ordered by radiation oncologist 
+2 Yes – ordered by a referring provider 
+999 Unknown 
+ 
+GatewayName: StagingCTObtained 
+ID #:  4006 
+Question Text: Was an MRI of the abdomen and/or pelvis obtained for staging purposes? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes – ordered by radiation oncologist 
+2 Yes – ordered by a referring provider 
+999 Unknown 
+ 
+GatewayName: StagingMRIObtained 
+ID #:  4007 
+Question Text: Was a bone scan obtained for staging purposes? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes – ordered by radiation oncologist 
+2 Yes – ordered by a referring provider 
+999 Unknown 
+ 
+GatewayName: StagingBoneScanObtained 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 20 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:   4008 
+Question Text: What was the clinical primary tumor classification at the time of diagnosis, 
+according to AJCC v7 criteria? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio – Single 
+*Values are coded using NCI Thesaurus concept codes. 
+Permissible Values: Code Description 
+C89208 cTX - Primary tumor cannot be assessed. 
+C89209 cT0 - No evidence of primary tumor. 
+C89210 cT1 - Clinically inapparent tumor neither palpable nor visible by 
+imaging. 
+C89211 cT1a - Tumor incidental histologic finding in 5% or less of tissue 
+resected. 
+C89212 cT1b - Tumor incidental histologic finding in more than 5% of tissue 
+resected. 
+C89213 cT1c - Tumor identified by needle biopsy (e.g., because of elevated 
+PSA). 
+C89214 cT2 - Prostate cancer confined within the prostate. Tumor found in 
+one or both lobes by needle biopsy, but not palpable or reliably 
+visible by imaging, is classified as T1c. 
+C89215 cT2a - Prostate cancer with tumor involving one-half of one lobe or 
+less. 
+C89216 cT2b - Prostate cancer with tumor involving more than one-half of 
+one lobe, but not both lobes. 
+C89217 cT2c - Prostate cancer with tumor involving both lobes. 
+C89218 cT3 - Prostate cancer extending through the prostatic capsule. 
+Invasion into the prostatic apex or into (but not beyond) the prostatic 
+capsule is classified not as T3 but as T2. 
+C89219 cT3a - Prostate cancer with extracapsular extension (unilateral or 
+bilateral). 
+C89220 cT3b - Prostate cancer invading seminal vesicle(s). 
+C89221 cT4 - Prostate cancer with fixed tumor or tumor invading adjacent 
+structures other than seminal vesicles such as external sphincter, 
+rectum, bladder, levator muscles, and/or pelvic wall. 
+ 
+GatewayName: ClinicalPrimaryTumorClassification 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 21 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:   4009 
+Question Text: What was the clinical regional lymph node classification at the time of 
+diagnosis, according to AJCC v7 criteria? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio - Single 
+*Values are coded using NCI Thesaurus concept codes. 
+Permissible Values: Code Description 
+C89223 cNX - Prostate cancer in which the regional lymph nodes cannot be 
+assessed. 
+C89224 cN0 - Prostate cancer with no regional lymph node metastasis. 
+C89225 cN1 - Prostate cancer with metastasis in regional lymph node(s). 
+ 
+GatewayName: ClinicalRegionalLymphNodeClassification 
+ID #:   4010 
+Question Text: What was the clinical distant metastasis classification at the time of 
+diagnosis, according to AJCC v7 criteria? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio - Single 
+*Values are coded using NCI Thesaurus concept codes. 
+Permissible Values: Code Description 
+C89227 cM0 - Prostate cancer without evidence of distant metastasis. 
+C89228 cM1 - Prostate cancer with distant metastasis. 
+C89229 cM1a - Prostate cancer with metastasis to non-regional lymph 
+node(s). 
+C89230 cM1b - Prostate cancer with metastasis to bone(s). 
+C89231 cM1c - Prostate cancer with metastasis to other site(s) with or 
+without bone disease. 
+ 
+GatewayName: ClinicalDistantMetastasisClassification 
+ID #:  4011 
+Question Text: What is the primary Gleason grade? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+1 Gleason Grade 1 
+2 Gleason Grade 2 
+3 Gleason Grade 3 
+4 Gleason Grade 4 
+5 Gleason Grade 5 
+999 Unknown 
+ 
+GatewayName: PrimaryGleasonGrade 
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 22 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ 
+ID #:  4012 
+Question Text: What is the secondary Gleason grade? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio - Single 
+Permissible Values: Code Description 
+1 Gleason Grade 1 
+2 Gleason Grade 2 
+3 Gleason Grade 3 
+4 Gleason Grade 4 
+5 Gleason Grade 5 
+999 Unknown 
+ 
+GatewayName: SecondaryGleasonGrade 
+ID #:  4013 
+Question Text: What is the tertiary Gleason grade? 
+Instructions: Choose one. 
+Type / Length / Format: Radio - Single 
+Permissible Values: Code Description 
+1 Gleason Grade 1 
+2 Gleason Grade 2 
+3 Gleason Grade 3 
+4 Gleason Grade 4 
+5 Gleason Grade 5 
+999 Unknown 
+ 
+GatewayName: TertiaryGleasonGrade 
+ID #:   4014 
+Question Text: Is the baseline (prior to the initiation of treatment) Prostate Specific Antigen 
+(PSA) value known? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio - Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: BaselinePSAValueKnown 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 23 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:   4015 
+Question Text: What was the baseline PSA value prior to the initiation of treatment? 
+Instructions: This field is required. 
+For assays with a lower limit of detection equal to 0.2 ng/mL, if the value is 
+undetectable, “Less than 0.2 ng/mL” should be entered.  
+Appears only if BaselinePSAValueKnown = “Yes”. 
+Type / Length / Format: Text: Supported LOINC Codes: 
+2857-1 Prostate specific Ag [Mass/volume] in Serum or Plasma 
+35741-8 Prostate specific Ag [Mass/volume] in Serum or Plasma by Detection limit 
+= 0.01 ng/mL 
+19197-3 Prostate specific Ag [Molecules/volume] in Serum or Plasma 
+19195-7 Prostate specific Ag [Units/volume] in Serum or Plasma 
+Permissible Values: Must be a decimal value or the text string “Less than 0.2 ng/mL” 
+GatewayName: BaselinePSAValue  
+ID #:   4016 
+Question Text: What were the units of the baseline PSA value prior to the initiation of 
+treatment? 
+Instructions: Choose one.  
+Appears only if BaselinePSAValueKnown = “Yes”. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+1 ng/mL 
+2 ug/L 
+3 umol/L 
+4 U/L 
+5 ng/dL 
+ 
+GatewayName: BaselinePSAUnits  
+ID #:   4017 
+Question Text: What was the date of the baseline PSA value prior to the initiation of treatment? 
+Instructions: Use the format ‘MM/DD/YYYY’. 
+ Appears only if BaselinePSAValueKnown = “Yes”. 
+Type / Length / Format: Date / ‘MM/DD/YYYY’ 
+Permissible Values: n/a 
+GatewayName: BaselinePSADate  
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 24 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+Data Entry Form: Treatment Course 
+Module Name NROR Patient Module 
+Parent Entity: Patient 
+Submission Frequency: Once at the time of initial patient submission 
+Revision Date: August 23, 2013 
+Special Note: Separate treatment course forms should be completed for each radiation therapy 
+prescription. 
+ 
+ID #:   5001 
+Question Text: Who was the treating physician at the start of the treatment course? 
+Instructions:  
+Type / Length / Format: Text 
+Permissible Values: n/a 
+GatewayName: TreatingPhysician 
+ID #:   5002 
+Question Text: What type of radiation therapy was used in this treatment course? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+C15751 External Beam Radiation Therapy 
+C15195 Brachytherapy 
+ 
+GatewayName: RadiationTherapyType 
+ID #:   5003 
+Question Text: What was the date of the first fraction of therapy (from all prescriptions) in this 
+treatment course? 
+Instructions: This field is required. 
+Enter the date in the format MM/DD/YYYY. 
+Type / Length / Format: Date / MM-DD-YYYY 
+Permissible Values: n/a 
+GatewayName: CourseStartDate 
+ID #:   5004 
+Question Text: What was the date of the last fraction of therapy (from all prescriptions) in this 
+treatment course? 
+Instructions: This field is required. 
+Enter the date in the format MM/DD/YYYY. 
+Type / Length / Format: Date / MM-DD-YYYY 
+Permissible Values: n/a 
+GatewayName: CourseEndDate 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 25 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:   5005 
+Question Text: What was the patient's height in inches at the start of this treatment course? 
+Instructions:  
+Type / Length / Format: Integer 
+Permissible Values: n/a 
+GatewayName: PatientHeight 
+ID #:   5006 
+Question Text: What was the patient's weight in pounds at the start of this treatment course? 
+Instructions:  
+Type / Length / Format: Integer 
+Permissible Values: n/a 
+GatewayName: PatientWeight 
+ID #:   5007 
+Question Text: What was the patient’s performance status at the start of this treatment 
+course? Use the Karnofsky Performance Scale criteria. 
+Instructions: Choose one. 
+The Eastern Cooperative Oncology Group (ECOG) equivalent scores are indicated 
+for ease of translation between the two scoring systems. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+100 100 - Normal; no complaints; no evidence of disease (ECOG 0) 
+90 90 - Able to carry on normal activity; minor signs or symptoms of 
+disease (ECOG 0) 
+80 80 - Normal activity with effort; some sign or symptoms of disease 
+(ECOG 1) 
+70 70 - Cares for self; unable to carry on normal activity or do active 
+work (ECOG 1) 
+60 60 - Requires occasional assistance, but is able to care for most 
+personal needs (ECOG 2) 
+50 50 - Requires considerable assistance and frequent medical care 
+(ECOG 2) 
+40 40 - Disabled; requires special care and assistance (ECOG 3) 
+30 30 - Severely disabled; hospitalization is indicated, although death 
+not imminent (ECOG 3) 
+20 20 - Very sick; hospitalization necessary; active support treatment is 
+necessary (ECOG 4) 
+10 10 - Moribund; fatal processes progressing rapidly (ECOG 4) 
+0 0 - Dead (ECOG 5) 
+ 
+GatewayName: PerformanceStatusTreatmentStart 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 26 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:   5008 
+Question Text: Was androgen deprivation therapy used in conjunction with this treatment 
+course? 
+Instructions: This field is required. 
+Choose One. 
+Type / Length / Format: Radio - Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes – prescribed by radiation oncologist 
+2 Yes – prescribed by referring provider 
+999 Unknown 
+ 
+GatewayName: ADTUsed 
+ID #:   5009 
+Question Text: What was the planned duration of the androgen deprivation therapy? 
+Instructions: This field is required. 
+Choose one.  
+Appears only if ADTUsed = “Yes”. 
+Type / Length / Format: Radio - Single 
+Permissible Values: Code Description 
+1 < 6 months 
+2 6 – 11 months 
+3 12 – 24 months 
+4 > 24 months 
+5 Indefinite 
+999 Unknown 
+ 
+GatewayName: ADTDuration  
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 27 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  5010 
+Question Text: Were any urinary toxicities (see definition) assessed on treatment? 
+Instructions: This field is required. 
+Choose one. 
+“Urinary toxicities” include the following terms as defined in CTCAE v4.0: 
+Urinary tract pain – A disorder characterized by a sensation of marked 
+discomfort in the urinary tract. 
+Urinary frequency – A disorder characterized by urination at short intervals. 
+Urinary urgency – A disorder characterized by a sudden compelling urge to 
+urinate. 
+Urinary incontinence – A disorder characterized by inability to control the 
+flow of urine from the bladder. 
+Urinary retention – A disorder characterized by accumulation of urine within 
+the bladder because of the inability to urinate. 
+Hematuria – A disorder characterized by laboratory test results that indicate 
+blood in the urine. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+999 Unknown 
+ 
+GatewayName: UrinaryToxicityAssessed 
+ID #:   5011 
+Question Text: Did the patient experience any Grade 3 or higher urinary toxicity (see 
+definition) during the on-treatment period? 
+Instructions: This field is required. 
+Choose one. 
+Appears only if UrinaryToxicityAssessed = “Yes”. 
+“Grade 3 urinary toxicities” include the following as defined in CTCAE v4.0: 
+Urinary tract pain - Severe pain; limiting self care activities of daily living 
+(ADL)  
+Urinary incontinence - Intervention indicated (e.g., clamp, collagen 
+injections); operative intervention indicated; limiting self care ADL 
+Urinary retention - Elective operative or radiologic intervention indicated; 
+substantial loss of affected kidney function or mass 
+Hematuria - Gross hematuria; transfusion, IV medications or hospitalization 
+indicated; elective endoscopic, radiologic or operative intervention indicated; 
+limiting self-care ADL 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: UrinaryGrade3Toxicity  
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 28 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  5012 
+Question Text: Did the patient experience any Grade 2 urinary toxicity (see definition) during 
+the on-treatment period? 
+Instructions: This field is required. 
+Choose one. 
+Appears only if UrinaryToxicityAssessed = “Yes”. 
+“Grade 2 urinary toxicities” include the following as defined in CTCAE v4.0: 
+Urinary tract pain -- Moderate pain; limiting instrumental activities of daily 
+living (ADL) 
+Urinary frequency – Limiting instrumental ADL; medical management 
+indicated 
+Urinary urgency – Limiting instrumental ADL; medical management indicated 
+Urinary incontinence – Spontaneous; pads indicated; limiting instrumental 
+ADL 
+Urinary retention – Placement of urinary, suprapubic or intermittent catheter 
+placement indicated; medication indicated 
+Hematuria – Symptomatic; urinary catheter or bladder irrigation indicated; 
+limiting instrumental ADL 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: UrinaryGrade2Toxicity  
+ID #:   5013 
+Question Text: Were any rectal toxicities (see definition) assessed on treatment? 
+Instructions: This field is required. 
+Choose one. 
+“Rectal toxicities” include the following terms as defined in CTCAE v4.0: 
+Rectal pain – A disorder characterized by a sensation of marked discomfort 
+in the rectal region. 
+Rectal hemorrhage – A disorder characterized by bleeding from the rectal 
+wall and discharged from the anus. 
+Rectal mucositis – A disorder characterized by inflammation of the mucous 
+membrane of the rectum. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+999 Unknown 
+ 
+GatewayName: RectalToxicityAssessed 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 29 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:   5014 
+Question Text: Did the patient experience any Grade 3 or higher rectal toxicity (see definition) 
+during the on-treatment period? 
+Instructions: This field is required.  
+Choose one. 
+Appears only if RectalToxicityAssessed = “Yes”. 
+“Grade 3 rectal toxicities” include the following as defined in CTCAE v4.0: 
+Rectal pain – Severe pain; limiting self care activities of daily living (ADL) 
+Rectal hemorrhage – Transfusion, radiologic, endoscopic, or elective 
+operative intervention indicated 
+Rectal mucositis – Severe symptoms; limiting self-care ADL 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: RectalGrade3Toxicity  
+ID #:  5015 
+Question Text: Did the patient experience any Grade 2 rectal toxicity (see definition) during 
+the on-treatment period? 
+Instructions: This field is required. 
+Choose one. 
+Appears only if RectalToxicityAssessed = “Yes”. 
+“Grade 2 rectal toxicities” include the following as defined in CTCAE v4.0: 
+Rectal pain – Moderate pain; limiting instrumental activities of daily living 
+(ADL) 
+Rectal hemorrhage – Moderate symptoms; medical intervention or minor 
+cauterization indicated 
+Rectal mucositis – Symptomatic; medical intervention indicated; limiting 
+instrumental ADL 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: RectalGrade2Toxicity  
+ID #:   5016 
+Question Text: What was the prostate volume in mL at the time of treatment planning? 
+Instructions:  
+Type / Length / Format: Integer 
+Permissible Values: n/a 
+GatewayName: ProstateVolume  
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 30 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:   5017 
+Question Text: What options were discussed during the initial patient consultation? 
+Instructions: This field is required. 
+Check all that apply. 
+This information may be found in the consult note.  
+Type / Length / Format: Checkbox - multiple 
+Permissible Values: Code Description 
+1 Surgical treatment options 
+2 Alternative radiation treatment options 
+3 Hormonal therapy 
+4 Active surveillance 
+ 
+GatewayName: Discussion  
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 31 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+Data Entry Form: EBRT Prescription  
+Appears only if RadiationTherapyType on Treatment Course Form = “External 
+Beam Radiation Therapy” 
+Module Name:  NROR Patient Module 
+Parent Entity: Patient 
+Submission Frequency: Once per prescription at the time of initial patient submission 
+Revision Date: August 23, 2013 
+ 
+ID #:   6001 
+Question Text: Indicate the external beam radiation treatment type for this prescription. 
+Instructions: This field is required.  
+Choose one.  
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+1 Photon Beam 
+2 Proton Beam 
+3 Cobalt-60 Gamma Ray 
+ 
+GatewayName: EBRTType 
+ID #:   6002 
+Question Text: Indicate the planning method used for this prescription. 
+Instructions: Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+1 3-Dimensional Conformal Radiation Therapy 
+2 Intensity Modulated Radiation Therapy (IMRT) 
+3 Volume Modulated Arc Therapy (VMAT) 
+4 Scanned proton beam planning 
+5 Scattered proton beam planning 
+ 
+GatewayName: EBRTPlanning 
+ID #:   6003 
+Question Text: Indicate the delivery method used for this prescription. 
+Instructions: Choose one. 
+Type / Length / Format: Radio - Single 
+Permissible Values: Code Description 
+1 C-arm Linear Accelerator 
+2 O-ring Treatment Machines (e.g. Tomotherapy) 
+3 Robotic Linear Accelerator (e.g. Cyberknife) 
+4 Scanned proton beam 
+5 Scattered proton beam 
+6 MR-based treatment machine (e.g. ViewRay) 
+ 
+GatewayName: EBRTDelivery 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 32 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:   6004 
+Question Text: What was the external beam maximum energy in MV? 
+Instructions: This field is required. 
+Type / Length / Format: Number 
+Permissible Values: n/a 
+GatewayName: EBRTMaxEnergy 
+ID #:   6005 
+Question Text: What was the total prescribed dose to the clinical target volume (CTV) in Gy? 
+Instructions: This field is required. 
+Type / Length / Format: Number 
+Permissible Values: n/a 
+GatewayName: CTVDose 
+ID #:   6006 
+Question Text: Indicate the intended external beam clinical target volume (CTV). 
+Instructions: This field is required. 
+If more than one prescription/plan is used in this treatment course (e.g. a boost to the 
+prostate), complete an additional EBRT form.  Please note that “Prostate Gland, 
+Seminal Vesicles, and Pelvic Nodes” should be selected for any treatment to the 
+whole pelvis.  
+Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+1 Prostate Gland only 
+2 Prostate Gland and Seminal Vesicles (>0.1cm) 
+3 Prostate Gland, Seminal Vesicles, and Pelvic Lymph Nodes (aka 
+“Whole Pelvis”) 
+ 
+GatewayName: CTVVolume 
+ID #:   6007 
+Question Text: What was the total number of fractions prescribed for this treatment course? 
+Instructions: This field is required. 
+Type / Length / Format: Integer  
+Permissible Values: n/a 
+GatewayName: TotalFractionsPrescribed 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 33 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  6008 
+Question Text: What was the number of fractions per day prescribed for this treatment 
+course? 
+Instructions: This field is required. 
+Type / Length / Format: Integer 
+Permissible Values: n/a 
+GatewayName: DailyFractionsPrescribed 
+ID #:  6009 
+Question Text: What was the total number of fractions delivered for this treatment course? 
+Instructions: This field is required. 
+Type / Length / Format: Integer  
+Permissible Values: n/a 
+GatewayName: TotalFractionsDelivered 
+ID #:  6010 
+Question Text: Was any immobilization used for this prescription? 
+Instructions: Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: ImmobilizationUsed 
+ID #:  6011 
+Question Text: Select all immobilization techniques used for this external beam prescription.  
+Instructions: Check all that apply.  
+Appears only if ImmobilizationUsed = “Yes”. 
+Type / Length / Format: Checkboxes – Multiple 
+Permissible Values: Code Description 
+1 Body Mould 
+2 Rectal Balloon 
+3 Leg Fixation 
+888 Other (specify) 
+ 
+GatewayName: ImmobilizationTechniquesUsed  
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 34 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  6012 
+Question Text: Specify the “Other” immobilization technique used for this external beam 
+prescription. 
+Instructions: Appears only when “other” is selected in previous question. 
+Type / Length / Format: Text / Short /  
+Permissible Values: n/a 
+GatewayName: OtherImmobilizationUsed  
+ID #:  6013 
+Question Text: Indicate the primary target localization method used for this prescription. 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio - Single 
+Permissible Values: Code  Description 
+0 None 
+1 Anatomic landmarks with film portal imaging  
+2 Anatomic landmarks with 2D kV/MV electronic portal imaging 
+3 Fiducial markers with film portal imaging 
+4 Fiducial markers with 2D kV/MV electronic portal imaging 
+5 Fiducial markers with cone beam CT 
+6 3D kV CT imaging 
+7 3D MV CT imaging 
+8 Radio beacon (e.g. Calypso) 
+9 Ultrasound 
+888 Other (specify) 
+ 
+GatewayName: TargetLocalizationMethodUsed 
+ID #:  6014 
+Question Text: Specify the “Other” target localization method used for this prescription. 
+Instructions: Appears only when “other” is selected in previous question. 
+Type / Length / Format: Text / Short  
+Permissible Values: n/a 
+GatewayName: OtherTargetLocalizationUsed  
+ID #:   6015 
+Question Text: Indicate the frequency of target localization. 
+Instructions: This field is required. Choose one. 
+Type / Length / Format: Radio - Single 
+Permissible Values: Code  Description 
+0 None 
+1 Daily  
+2 Weekly 
+ 
+GatewayName: TargetLocalizationFrequency 
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 35 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ 
+Form Name: Brachytherapy Prescription  
+Appears only if Radiation Therapy on Treatment Course Form = “Brachytherapy.” 
+Module Name: NROR Patient Module 
+Parent Entity: Patient 
+Submission Frequency: Once  per prescription at the time of Initial patient submission 
+Revision Date: August 23, 2013 
+ 
+ID #:  7001 
+Question Text: Indicate the type of brachytherapy prescription. 
+Instructions: Choose one. 
+Type / Length / Format: Radio - Single 
+Permissible Values: Code Description 
+1 Low dose rate (LDR) brachytherapy 
+2 High dose rate (HDR) brachytherapy 
+ 
+GatewayName: BrachyPrescriptionType 
+ID #:  7002 
+Question Text: What was the brachytherapy prescription dose to the prostate – entire gland 
+(Gy)? 
+Instructions:  
+Type / Length / Format: Text  
+Permissible Values: n/a 
+GatewayName: BrachyDosePrescribed 
+ID #:  7003 
+Question Text: Indicate the brachytherapy planning technique. 
+Instructions: Choose one 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+1 Pre-operative 
+2 Intra-operative 
+ 
+GatewayName: BrachyPlanningTechnique 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 36 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  7004 
+Question Text: Indicate the type of imaging used for brachytherapy planning. 
+Instructions: Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 None 
+1 TRUS 
+2 CT 
+3 MRI 
+888 Other  
+999 Unknown 
+ 
+GatewayName: BrachyPlanningImaging 
+ID #:  7005 
+Question Text: Indicate the type of imaging used during the implant procedure.   
+Instructions: Check all that apply. 
+Type / Length / Format: Checkboxes / Multiple 
+Permissible Values: Code Description 
+1 TRUS 
+2 CT 
+3 MRI 
+4 Fluoroscopy 
+ 
+GatewayName: BrachyProcedureImaging 
+ID #: 7006 
+Question Text: Indicate the isotope that was used for this low dose rate (LDR) brachytherapy 
+prescription.  
+Instructions: Choose one. Appears only if BrachyPrescriptionType = “LDR”. 
+Type / Length / Format: Radio - Single 
+Permissible Values: Code Description 
+1 Iodine 125 
+2 Palladium 103 
+3 Gold 198 
+4 Cesium (Cs) 131 
+ 
+GatewayName: LDRModality  
+ID #:  7007 
+Question Text: How many sources were placed for this low dose rate (LDR) brachytherapy 
+prescription? 
+Instructions: Appears only if BrachyPrescriptionType = “LDR” 
+Type / Length / Format: Integer 
+Permissible Values: n/a 
+GatewayName: LDRSeedNumber  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 37 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  7008 
+Question Text: Indicate the type of sources placed for this low dose rate (LDR) brachytherapy 
+prescription. 
+Instructions: Choose one. 
+ Appears only if BrachyPrescriptionType = “LDR”. 
+Type / Length / Format: Radio - Single 
+Permissible Values: Code Description 
+1 Stranded 
+2 Loose 
+3 Both 
+ 
+GatewayName: LDRSeedType  
+ID #: 7009 
+Question Text: What was the date of the first fraction implantation? 
+Instructions: Enter the date in the format MM/DD/YYYY.  
+Appears only if BrachyPrescriptionType = “LDR”. 
+Type / Length / Format: Date / ‘MM/DD/YYYY’ 
+Permissible Values: n/a 
+GatewayName: LDRImplantDate  
+ID #:  7010 
+Question Text: Was post-implant dosimetry performed? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+999 Unknown 
+ 
+GatewayName: PostImplantDosimetry 
+ID #:  7011 
+Question Text: Indicate the imaging modality used for post-implant dosimetry. 
+Instructions: This field is required. 
+Choose one. 
+Appears only if PostImplantDosimetry = “Yes”. 
+Type / Length / Format: Radio - Single 
+Permissible Values: Code Description 
+1 TRUS 
+2 CT 
+3 MRI 
+ 
+GatewayName: PostImplantImaging  
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 38 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  7012 
+Question Text: What was the date of the post-implant dosimetry? 
+Instructions: This field is required. 
+Enter the date in the format MM/DD/YYYY.  
+Appears only if PostImplantDosimetry = “Yes”. 
+Type / Length / Format: Date / ‘MM/DD/YYYY’ 
+Permissible Values: n/a 
+GatewayName: PostImplantDosimetryDate  
+ID #:  7013 
+Question Text: How many HDR fractions were prescribed?  
+Instructions: Appears only if BrachyPrescriptionType = “HDR” 
+Type / Length / Format: Integer 
+Permissible Values: n/a 
+GatewayName: HDRFractions  
+ID #:  7014 
+Question Text: What was the HDR dose per fraction in Gy? 
+Instructions: Appears only if BrachyPrescriptionType = “HDR”. 
+Type / Length / Format: Integer 
+Permissible Values: n/a 
+GatewayName: HDRDosePerFraction  
+ID #:  7015 
+Question Text: What was the date of the first HDR fraction implantation? 
+Instructions: Enter the date in the format MM/DD/YYYY. 
+ Appears only if BrachyPrescriptionType = “HDR”. 
+Type / Length / Format: Date / ‘MM/DD/YYYY’ 
+Permissible Values: n/a 
+GatewayName: FirstHDRFractionDate  
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 39 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+Data Entry Form: Patient Cause of Death  
+Appears only if PatientStatus = “Deceased.” 
+Module Name: NROR Patient Module 
+Parent Entity: Patient 
+Submission Frequency: N/A 
+Revision Date: August 23, 2013 
+ 
+ID #:   8001 
+Question Text: What was the date of death? 
+Instructions: This field is required. 
+Enter the date in the format MM/DD/YYYY. 
+Type / Length / Format: Date / ‘MM/DD/YYYY’ 
+Permissible Values: n/a 
+GatewayName: DeathDate  
+ID #:   8002 
+Question Text: What was the primary cause of death? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code  Description 
+1 Malignant Cancer 
+2 Non-Cancerous Disease 
+999 Unknown 
+ 
+GatewayName: DeathCause  
+ID #:   8003 
+Question Text: Please select the cancer that was the primary cause of death. 
+Instructions: Choose one. 
+Coded according to the SEER Cause of Death Recode 1969+ (04/16/2012). Appears 
+only if DeathCause = “Malignant Cancer”. 
+Type / Length / Format: Dropdown List 
+Permissible Values: 35011 Acute Lymphocytic Leukemia 
+35031 Acute Monocytic Leukemia 
+35021 Acute Myeloid Leukemia 
+35043 Aleukemic, subleukemic and NOS 
+21060 Anus, Anal Canal and Anorectum 
+23000 Bones and Joints 
+31010 Brain and Other Nervous System 
+26000 Breast 
+27010 Cervix Uteri 
+35012 Chronic Lymphocytic Leukemia 
+35022 Chronic Myeloid Leukemia 
+21040 Colon excluding Rectum 
+27020 Corpus Uteri 
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 40 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+21010 Esophagus 
+30000 Eye and Orbit 
+20040 Floor of Mouth 
+21080 Gallbladder 
+20050 Gum and Other Mouth 
+33010 Hodgkin Lymphoma 
+20090 Hypopharynx 
+21072 Intrahepatic Bile Duct 
+36020 Kaposi Sarcoma 
+29020 Kidney and Renal Pelvis 
+22020 Larynx 
+20010 Lip 
+21071 Liver 
+22030 Lung and Bronchus 
+25010 Melanoma of the Skin 
+36010 Mesothelioma 
+37000 Miscellaneous Malignant Cancer 
+34000 Myeloma 
+20060 Nasopharynx 
+33040 Non-Hodgkin Lymphoma 
+22010 Nose, Nasal Cavity and Middle Ear 
+20080 Oropharynx 
+35041 Other Acute Leukemia 
+21090 Other Biliary 
+21130 Other Digestive Organs 
+32020 Other Endocrine including Thymus 
+27070 Other Female Genital Organs 
+35013 Other Lymphocytic Leukemia 
+28040 Other Male Genital Organs 
+35023 Other Myeloid/Monocytic Leukemia 
+25020 Other Non-Epithelial Skin 
+20100 Other Oral Cavity and Pharynx 
+29040 Other Urinary Organs 
+27040 Ovary 
+21100 Pancreas 
+28030 Penis 
+21120 Peritoneum, Omentum and Mesentery 
+22050 Pleura 
+28010 Prostate 
+21050 Rectum and Rectosigmoid Junction 
+21110 Retroperitoneum 
+20030 Salivary Gland 
+21030 Small Intestine 
+24000 Soft Tissue including Heart 
+21020 Stomach 
+28020 Testis 
+32010 Thyroid 
+20020 Tongue 
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 41 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ 
+20070 Tonsil 
+22060 Trachea, Mediastinum and Other Respiratory Organs 
+29030 Ureter 
+29010 Urinary Bladder 
+27030 Uterus, NOS 
+27050 Vagina 
+27060 Vulva 
+GatewayName: CancerDeathCause  
+ID #:   8004 
+Question Text: Please select the non-cancerous disease that was the primary cause of death. 
+Instructions: Choose one. 
+Coded according to the SEER Cause of Death Recode 1969+ (04/16/2012). Appears 
+only if DeathCause = “Non-Cancerous Disease”. 
+Type / Length / Format: Dropdown List 
+Permissible Values: 50210 Accidents and Adverse Effects 
+50051 Alzheimer’s (ICD-9 and 10 only) 
+50100 Aortic Aneurysm and Dissection 
+50090 Atherosclerosis 
+50080 Cerebrovascular Diseases 
+50190 Certain Conditions Originating in Perinatal Period 
+50150 Chronic Liver Disease and Cirrhosis 
+50130 Chronic Obstructive Pulmonary Disease and Allied Conditions 
+50170 Complications of Pregnancy, Childbirth, Puerperium 
+50180 Congenital Anomalies 
+50050 Diabetes Mellitus 
+50060 Diseases of Heart 
+50230 Homicide and Legal Intervention 
+50040 Human Immunodeficiency Virus (HIV) (1987+) 
+50070 Hypertension without Heart Disease 
+38000 In situ, benign or unknown behavior neoplasm 
+50160 Nephritis, Nephrotic Syndrome and Nephrosis 
+50300 Other Cause of Death 
+50110 Other Diseases of Arteries, Arterioles, Capillaries 
+50040 Other Infectious and Parasitic Diseases 
+50120 Pneumonia and Influenza 
+50030 Septicemia 
+50140 Stomach and Duodenal Ulcers 
+50220 Suicide and Self-Inflicted Injury 
+50200 Symptoms, Signs and Ill-Defined Conditions 
+50010 Syphilis 
+50000 Tuberculosis 
+ 
+GatewayName: NonCancerDeathCause  
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 42 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+Data Entry Form: Prostate Cancer Follow-up 
+Module Name NROR Patient Module 
+Parent Entity: Patient 
+Submission Frequency: Yearly following the initial submission 
+Revision Date: August 23, 2013 
+ 
+ID #:   9001 
+Question Text: Has the patient had any follow-up visits with Radiation Oncology at this facility 
+in the past year? 
+Instructions: This field is required.  
+Choose one. 
+Type / Length / Format: Radio - Single 
+Permissible Values: Code  Description 
+0 No 
+1 Yes 
+ 
+GatewayName: RadOncFollowUp 
+ID #:   9002 
+Question Text: Has the patient had any follow-up visits with other specialties in the past year 
+for which documentation is available at this facility? Check all that apply. 
+Instructions: This field is required. 
+Check all that apply. 
+Type / Length / Format: Checkboxes / Multiple 
+Permissible Values: Code  Description 
+1 Medical Oncology 
+2 Urology 
+3 Primary Care 
+888 Other 
+ 
+GatewayName: OtherFollowUpVisit 
+ID #:   9003 
+Question Text: What is the date of the most recent follow-up visit for which documentation is 
+available? 
+Instructions: This field is required. 
+Enter the date in the format MM/DD/YYYY. 
+Type / Length / Format: Date / ‘MM/DD/YYYY’ 
+Permissible Values: n/a 
+GatewayName: DateofLastFollowUp 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 43 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:   9004 
+Question Text: What is the patient’s status? 
+Instructions: This field is required. 
+Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code  Description 
+1 Living 
+2 Lost to Follow-up 
+3 Subject Withdrew 
+4 Deceased 
+ 
+GatewayName: PatientStatus 
+ID #:   9005 
+Question Text: Has the patient been diagnosed with a biochemical recurrence since the initial 
+course of treatment? 
+Instructions: Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+666 Indeterminate/Equivocal 
+999 Unknown 
+ 
+GatewayName: BiochemicalRecurrenceStatus 
+ID #:   9006 
+Question Text: What was the diagnosis date of biochemical recurrence? 
+Instructions: Enter the date in the format MM/DD/YYYY. 
+ Appears only if BiochemicalRecurrenceStatus = “Yes”. 
+Type / Length / Format: Date / ‘MM/DD/YYYY’ 
+Permissible Values: n/a 
+GatewayName: BiochemicalRecurrenceDate 
+ID #:   9007 
+Question Text: Has the patient been diagnosed with a local recurrence since the initial course 
+of treatment? 
+Instructions: Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+666 Indeterminate/Equivocal 
+999 Unknown 
+ 
+GatewayName: LocalRecurrenceStatus 
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 44 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ 
+ID #:   9008 
+Question Text: What was the diagnosis date of the local recurrence? 
+Instructions: Enter the date in the format MM/DD/YYYY.  
+Appears only if LocalRecurrenceStatus = “Yes”. 
+Type / Length / Format: Date / ‘MM/DD/YYYY’ 
+Permissible Values: n/a 
+GatewayName: LocalRecurrenceDiagnosisDate  
+ID #:   9009 
+Question Text: What was the method of evaluation of the local recurrence? 
+Instructions: Check all that apply.  
+Appears only if LocalRecurrenceStatus = “Yes”. 
+Type / Length / Format: Checkbox - Multiple 
+Permissible Values: Code Description 
+1 Clinical Exam 
+2 Imaging 
+3 Biopsy 
+ 
+GatewayName: LocalRecurrenceEvaluation  
+ID #:   9010 
+Question Text: Has the patient been diagnosed with distant progression since the initial 
+course of treatment? 
+Instructions: Choose one. 
+Type / Length / Format: Radio - single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+666 Indeterminate/Equivocal 
+999 Unknown 
+ 
+GatewayName: DistantProgressionStatus 
+ID #:   9011 
+Question Text: What was the diagnosis date of distant progression? 
+Instructions: Enter the date in the format MM/DD/YYYY.  
+Appears only if DistantProgressionStatus = “Yes”. 
+Type / Length / Format: Date / ‘MM/DD/YYYY’ 
+Permissible Values: n/a 
+GatewayName: DistantProgressionDiagnosisDate  
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 45 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:   9012 
+Question Text: Indicate all known sites of distant progression. 
+Instructions: Check all that apply. 
+ Appears only if DistantProgressionStatus = “Yes”. 
+Type / Length / Format: Checkbox – Multiple 
+Permissible Values: Code Description 
+1 Bone 
+2 Lymph Node 
+3 Other Visceral Organs 
+ 
+GatewayName: DistantProgressionSite  
+ID #:   9013 
+Question Text: What was the method of evaluation used to diagnose the distant 
+progression? 
+Instructions: Check all that apply.  
+Appears only if DistantProgressionStatus = “Yes”. 
+Type / Length / Format: Checkbox – Multiple 
+Permissible Values: Code Description 
+1 Clinical Exam 
+2 Imaging 
+3 Biopsy 
+ 
+GatewayName: DistantProgressionEvaluation  
+ID #:   9014 
+Question Text: Is the patient currently on androgen deprivation therapy? 
+Instructions: Choose one. 
+Appears only if ADTUsed = “Yes”. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+999 Unknown 
+ 
+GatewayName: CurrentADT  
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 46 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:   9015 
+Question Text: What was the reason androgen deprivation therapy was discontinued? 
+Instructions: Choose one. 
+Appears only if CurrentADT = “No”. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+1 Treatment completed as prescribed 
+2 Treatment terminated due to toxicity 
+3 Patient request 
+888 Other  
+ 
+GatewayName: ADTDiscontinuationReason  
+ID #:   9016 
+Question Text: Is the patient receiving any secondary prostate cancer therapy? 
+Instructions: Choose one. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+999 Unknown 
+ 
+GatewayName: SecondaryTherapy 
+ID #:   9017 
+Question Text: What was the type of secondary therapy prescribed? 
+Instructions: Choose one.  
+Appears only if SecondaryTherapy = “Yes”. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+1 Palliative radiation therapy for metastatic disease 
+2 Re-treatment of progressive local disease with external beam 
+radiation 
+3 Re-treatment of progressive local disease with brachytherapy 
+4 Re-treatment of progressive local disease with cryotherapy / hifu 
+5 Chemotherapy 
+6 Immunotherapy 
+7 Novel alternative hormonal therapy 
+8 Additional hormonal therapy 
+9 Radiopharmaceuticals 
+888 Other  
+ 
+GatewayName: SecondaryTherapyType  
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 47 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:   9018 
+Question Text: Indicate the secondary therapy start date. 
+Instructions: Enter the date in the format MM/DD/YYYY.  
+Appears only if SecondaryTherapy = “Yes”. 
+Type / Length / Format: Date / ‘MM/DD/YYYY’ 
+Permissible Values: n/a 
+GatewayName: SecondaryTherapyStartDate  
+ID #:  9019 
+Question Text: What was the maximum PSA value since the last follow-up submission? 
+Instructions: For assays with a lower limit of detection equal to 0.2 ng/mL, if the value is 
+undetectable, “Less than 0.2 ng/mL” should be entered. 
+Type / Length / Format: Text 
+Supported LOINC Codes: 
+2857-1 Prostate specific Ag [Mass/volume] in Serum or Plasma 
+35741-8 Prostate specific Ag [Mass/volume] in Serum or Plasma by Detection limit 
+= 0.01 ng/mL 
+19197-3 Prostate specific Ag [Molecules/volume] in Serum or Plasma 
+19195-7 Prostate specific Ag [Units/volume] in Serum or Plasma 
+Permissible Values: Must be a decimal value or the text string “Less than 0.2ng/ mL.” 
+GatewayName: FollowUpPSAValue 
+ID #:   9020 
+Question Text: What were the units of the maximum PSA value obtained since the last 
+follow-up submission? 
+Instructions: Choose one. 
+Type / Length / Format: Radio – Single  
+Permissible Values: Code Description 
+1 ng/mL 
+2 ug/L 
+3 umol/L 
+4 U/L 
+5 ng/dL 
+ 
+GatewayName: FollowUpPSAUnits 
+ID #:   9021 
+Question Text: What was the date of the maximum PSA value since the last follow-up 
+submission? 
+Instructions: Enter the date in the format MM/DD/YYYY. 
+Type / Length / Format: Date / ‘MM/DD/YYY’ 
+Permissible Values: n/a 
+GatewayName: FollowUpPSADate 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 48 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:   9022 
+Question Text: Were any urinary toxicities (see definition) assessed since the last follow-up 
+submission? 
+Instructions: This field is required.   
+Choose one. 
+“Urinary toxicities” include the following terms as defined in CTCAE v4.0: 
+Urinary tract pain – A disorder characterized by a sensation of marked 
+discomfort in the urinary tract. 
+Urinary frequency – A disorder characterized by urination at short 
+intervals. 
+Urinary urgency – A disorder characterized by a sudden compelling urge 
+to urinate. 
+Urinary incontinence – A disorder characterized by inability to control the 
+flow of urine from the bladder. 
+Urinary retention – A disorder characterized by accumulation of urine 
+within the bladder because of the inability to urinate. 
+Hematuria – A disorder characterized by laboratory test results that 
+indicate blood in the urine. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+999 Unknown 
+ 
+GatewayName: FollowUpUrinaryToxicityAssessed 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 49 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:   9023 
+Question Text: Did the patient experience any Grade 3 or higher urinary toxicity (see 
+definition) since the last follow-up submission? 
+Instructions: This field is required. 
+Choose one. 
+Appears only if FollowUpUrinaryToxicityAssessed = “Yes”. 
+“Grade 3 urinary toxicities” include the following as defined in CTCAE v4.0: 
+Urinary tract pain - Severe pain; limiting self care activities of daily living 
+(ADL)  
+Urinary incontinence - Intervention indicated (e.g., clamp, collagen 
+injections); operative intervention indicated; limiting self care ADL 
+Urinary retention - Elective operative or radiologic intervention indicated; 
+substantial loss of affected kidney function or mass 
+Hematuria - Gross hematuria; transfusion, IV medications or 
+hospitalization indicated; elective endoscopic, radiologic or operative 
+intervention indicated; limiting self-care ADL 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: FollowUpUrinaryGrade3Toxicity  
+ID #:   9024 
+Question Text: Did the patient experience any Grade 2 urinary toxicity (see definition) since 
+the last follow-up submission? 
+Instructions: This field is required. 
+Choose one.  
+Appears only if FollowUpUrinaryToxicityAssessed = “Yes”.  
+ “Grade 2 urinary toxicities” include the following as defined in CTCAE v4.0: 
+Urinary tract pain -- Moderate pain; limiting instrumental activities of daily 
+living (ADL) 
+Urinary frequency – Limiting instrumental ADL; medical management 
+indicated 
+Urinary urgency – Limiting instrumental ADL; medical management 
+indicated 
+Urinary incontinence – Spontaneous; pads indicated; limiting instrumental 
+ADL 
+Urinary retention – Placement of urinary, suprapubic or intermittent 
+catheter placement indicated; medication indicated 
+Hematuria – Symptomatic; urinary catheter or bladder irrigation indicated; 
+limiting instrumental ADL 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: FollowUpUrinaryGrade2Toxicity  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 50 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ 
+ID #:   9025 
+Question Text: Were any rectal toxicities (see definition) assessed since the last follow-up 
+submission? 
+Instructions: This field is required.   
+Choose one. 
+“Rectal toxicities” include the following terms as defined in CTCAE v4.0: 
+Rectal pain – A disorder characterized by a sensation of marked 
+discomfort in the rectal region. 
+Rectal hemorrhage – A disorder characterized by bleeding from the rectal 
+wall and discharged from the anus. 
+Rectal mucositis – A disorder characterized by inflammation of the 
+mucous membrane of the rectum. 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+999 Unknown 
+ 
+GatewayName: FollowUpRectalToxicityAssessed 
+ID #:   9026 
+Question Text: Did the patient experience any Grade 3 or higher rectal toxicity (see 
+definition) since the last follow-up submission? 
+Instructions: This field is required. 
+Choose one. 
+Appears only if FollowUpRectalToxicityAssessed = “Yes”.  
+ “Grade 3 rectal toxicities” include the following as defined in CTCAE v4.0: 
+Rectal pain – Severe pain; limiting self-care activities of daily living (ADL) 
+Rectal hemorrhage – Transfusion, radiologic, endoscopic, or elective 
+operative intervention indicated 
+Rectal mucositis – Severe symptoms; limiting self-care ADL 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: FollowUpRectalGrade3Toxicity  
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 51 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:   9027 
+Question Text: Did the patient experience any Grade 2 rectal toxicity (see definition) since 
+the last follow-up submission? 
+Instructions: This field is required. 
+Choose one. 
+Appears only if FollowUpRectalToxicityAssessed = “Yes”. 
+“Grade 2 rectal toxicities” include the following as defined in CTCAE v4.0: 
+Rectal pain – Moderate pain; limiting instrumental activities of daily living 
+(ADL) 
+Rectal hemorrhage – Moderate symptoms; medical intervention or minor 
+cauterization indicated 
+Rectal mucositis – Symptomatic; medical intervention indicated; limiting 
+instrumental ADL 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: FollowUpRectalGrade2Toxicity 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 52 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+Data Entry Form: Charlson Comorbidity Index (CCI) 
+Module Name: NROR Patient Module 
+Parent Entity: Patient 
+Submission Frequency: Once at the time of initial patient submission  
+Revision Date:  August 23, 2013  
+ 
+ID #:  10001 
+Question Text: What was the patient’s age at the start of this treatment course? 
+Instructions: Choose one. 
+Type / Length / Format: Radio – Single  
+Permissible Values: Code Description 
+0 Less than 40 years 
+1 41 to 50 years 
+2 51 to 60 years 
+3 61 to 70 years 
+4 71 to 80 years 
+5 81 to 90 years 
+6 91 to 100 years 
+ 
+GatewayName: CCI_AgeAtStartofTreatmentCourse 
+ID #:  10002 
+Question Text: As of the start of this treatment course, please indicate if the patient had a 
+history of myocardial infarction. 
+Instructions: Choose one.  
+Corresponding Diagnosis Codes: 
+ICD-9-CM: 410.x, 412.x 
+ 
+ICD-10: 121.x, 122.x, 125.2 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: CCI_MI 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 53 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  10003 
+Question Text: As of the start of this treatment course, please indicate whether the patient 
+had a history of congestive heart failure. 
+Instructions: Choose one. Corresponding Diagnosis Codes: 
+ 
+ICD-9-CM: 398.91, 402.01, 402.11, 402.91, 404.01, 404.03, 404.11, 404.13, 
+404.91, 404.93, 425.4–425.9, 428.x 
+ 
+ICD-10: I09.9, I11.0, I13.0, I13.2, I25.5, I42.0, I42.5–I42.9, I43.x, I50.x, P29.0 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: CCI_CHF 
+ID #:  10004 
+Question Text: As of the start of this treatment course, please indicate whether the 
+patient had a history of peripheral vascular disease. 
+Instructions: Choose one. Corresponding Diagnosis Codes: 
+ 
+ICD-9-CM: 093.0, 437.3, 440.x, 441.x, 443.1–443.9, 47.1, 557.1, 557.9, V43.4 
+ 
+ICD-10: I70.x, I71.x, I73.1, I73.8, I73.9, I77.1, I79.0, I79.2, K55.1, K55.8, K55.9, 
+Z95.8, Z95.9 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: CCI_PVD 
+ID #:  10005 
+Question Text: As of the start of this treatment course, please indicate whether the 
+patient had a history of cerebrovascular disease. 
+Instructions: Choose one. Corresponding Diagnosis Codes: 
+ 
+ICD-9-CM: 362.34, 430.x–438.x 
+ 
+ICD-10: G45.x, G46.x, H34.0, I60.x–I69.x 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: CCI_CVD 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 54 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  10006 
+Question Text: As of the start of this treatment course, please indicate whether the patient 
+had a history of dementia. 
+Instructions: Choose one. Corresponding Diagnosis Codes: 
+ 
+ICD-9-CM: 290.x, 294.1, 331.2 
+ 
+ICD-10: F00.x–F03.x, F05.1, G30.x, G31.1 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: CCI_Dementia 
+ID #:  10007 
+Question Text: As of the start of this treatment course, please indicate whether the patient 
+had a history of chronic pulmonary disease. 
+Instructions: Choose one. Corresponding Diagnosis Codes: 
+ 
+ICD-9-CM: 416.8, 416.9, 490.x–505.x, 506.4, 508.1, 508.8 
+ 
+ICD-10: I27.8, I27.9, J40.x–J47.x, J60.x–J67.x, J68.4, J70.1, J70.3 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: CCI_COPD 
+ID #:  10008 
+Question Text: As of the start of this treatment course, please indicate whether the patient 
+had a history of connective tissue disease. 
+Instructions: Choose one. Corresponding Diagnosis Codes: 
+ 
+ICD-9-CM: 446.5, 710.0–710.4, 714.0–714.2, 714.8, 725.x 
+ 
+ICD-10: M05.x, M06.x, M31.5, M32.x–M34.x, M35.1, M35.3, M36.0 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: CCI_ConnectiveTissue 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 55 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  10009 
+Question Text: As of the start of this treatment course, please indicate whether the patient 
+had a history of ulcer disease. 
+Instructions: Choose one. Corresponding Diagnosis Codes: 
+ 
+ICD-9-CM: 531.x–534.x 
+ 
+ICD-10: K25.x–K28.x 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Yes 
+ 
+GatewayName: CCI_PUD 
+ID #:  10010 
+Question Text: As of the start of this treatment course, please indicate whether the patient 
+had a history of liver disease. 
+Instructions: Choose one. Corresponding Diagnosis Codes: 
+Mild: 
+ICD-9-CM: 070.22, 070.23, 070.32, 070.33, 070.44, 070.54, 070.6, 070.9, 570.x, 
+571.x, 573.3, 573.4, 573.8, 573.9, V42.7 
+ 
+ICD-10: B18.x, K70.0–K70.3, K70.9, K71.3–K71.5, K71.7, K73.x, K74.x, K76.0, 
+K76.2–K76.4, K76.8, K76.9, Z94.4 
+ 
+Moderate or severe: 
+ICD-9-CM: 456.0–456.2, 572.2–572.8 
+ 
+ICD-10: I85.0, I85.9, I86.4, I98.2, K70.4, K71.1, K72.1, K72.9, K76.5, K76.6, 
+K76.7 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Mild  
+3 Moderate to Severe 
+ 
+GatewayName: CCI_Liver 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 56 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  10011 
+Question Text: As of the start of this treatment course, please indicate whether the patient 
+had a history of diabetes. 
+Instructions: Choose one. Corresponding Diagnosis Codes: 
+Without chronic complications: 
+ICD-9-CM: 250.0–250.3, 250.8, 250.9 
+ 
+ICD-10: E10.0, E10.1, E10.6, E10.8, E10.9, E11.0, E11.1, E11.6, E11.8, E11.9, 
+E12.0, E12.1, E12.6, E12.8, E12.9, E13.0, E13.1, E13.6, E13.8, E13.9, E14.0, 
+E14.1, E14.6, E14.8, E14.9 
+ 
+With chronic complications: 
+ICD-9-CM: 250.4–250.7 
+ 
+ICD-10: E10.2–E10.5, E10.7, E11.2–E11.5, E11.7, E12.2–E12.5, E12.7, E13.2–
+E13.5, E13.7, E14.2–E14.5, E14.7 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+1 Without chronic complications 
+2 With chronic complications 
+ 
+GatewayName: CCI_DM 
+ID #:  10012 
+Question Text: As of the start of this treatment course, please indicate whether the patient 
+had a history of hemiplegia or paraplegia. 
+Instructions: Choose one. Corresponding Diagnosis Codes: 
+ICD-9-CM: 334.1, 342.x, 343.x, 344.0–344.6, 344.9 
+ 
+ICD-10: G04.1, G11.4, G80.1, G80.2, G81.x, G82.x, G83.0–G83.4, G83.9 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+2 Yes 
+ 
+GatewayName: CCI_Hemiplegia 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 57 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  10013 
+Question Text: As of the start of this treatment course, please indicate whether the patient 
+had a history of chronic kidney disease. 
+Instructions: Choose one. Corresponding Diagnosis Codes: 
+Moderate or severe: 
+ICD-9-CM: 403.01, 403.11, 403.91, 404.02, 404.03, 404.12, 404.13, 404.92, 
+404.93, 582.x, 583.0–583.7, 585.x, 586.x, 588.0, V42.0, V45.1, V56.x 
+ 
+ICD-10: I12.0, I13.1, N03.2–N03.7, N05.2–N05.7, N18.x, N19.x, N25.0, Z49.0–
+Z49.2, Z94.0, Z99.2 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No or mild 
+2 Moderate or severe 
+ 
+GatewayName: CCI_CKD 
+ID #:  10014 
+Question Text: As of the start of this treatment course, please indicate whether the patient 
+had a history of solid tumor malignancy. 
+Instructions: Choose one. Corresponding Diagnosis Codes: 
+Not metastatic: 
+ICD-9-CM: 140.x–172.x, 174.x–195.8 
+ 
+ICD-10: C00.x–C26.x, C30.x–C34.x, C37.x–C41.x, C43.x, C45.x–C58.x, C60.x–
+C76.x 
+ 
+Metastatic:  
+ICD-9-CM: 196.x–199.x 
+ 
+ICD-10: C77.x–C80.x 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+2 Non-metastatic 
+6 Metastatic 
+ 
+GatewayName: CCI_SolidTumor 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 58 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  10015 
+Question Text: As of the start of this treatment course, please indicate whether the patient 
+had a history of leukemia or lymphoma. 
+Instructions: Choose one. Corresponding Diagnosis Codes: 
+ 
+ICD-9-CM: 200.x–208.x, 238.6 
+ 
+ICD-10: C81.x–C85.x, C88.x, C90.x–C97.x 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+2 Yes 
+ 
+GatewayName: CCI_HemeMalignancy 
+ID #:  10016 
+Question Text: As of the start of this treatment course, please indicate whether the patient 
+had a history of HIV/AIDS. 
+Instructions: Choose one. Corresponding Diagnosis Codes: 
+ 
+ICD-9-CM: 042.x–044.x 
+ 
+ICD-10: B20.x–B22.x, B24.x 
+Type / Length / Format: Radio – Single 
+Permissible Values: Code Description 
+0 No 
+6 Yes 
+ 
+GatewayName: CCI_AIDS 
+ 
+ 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 59 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+Form Name: DVH Summary Statistics 
+Module Name: NROR Patient Module 
+Parent Entity: Patient 
+Submission Frequency: Once  at the time of Initial patient submission 
+Revision Date:  August 23, 2013 
+ 
+ID #:  11001 
+Question Text: What dose did 95% of the clinical target volume (CTV D95) receive in Gy? 
+Instructions:  
+Type / Length / Format: Numeric 
+Permissible Values: n/a 
+GatewayName: CTV_D95 
+ID #:  11002 
+Question Text: What dose did 90% of the clinical target volume (CTV D90) receive in Gy? 
+Instructions:  
+Type / Length / Format: Numeric 
+Permissible Values: n/a 
+GatewayName: CTV_D90 
+ID #:  11003 
+Question Text: What was the CTV Mean Dose in Gy? 
+Instructions:  
+Type / Length / Format: Numeric 
+Permissible Values: n/a 
+GatewayName: CTVMeanDose 
+ID #:  11004 
+Question Text: What was the CTV maximum dose in Gy? 
+Instructions:  
+Type / Length / Format: Numeric 
+Permissible Values: n/a 
+GatewayName: CTVMaxDose 
+ID #:  11005 
+Question Text: What was the CTV minimum dose in Gy? 
+Instructions:  
+Type / Length / Format: Numeric 
+Permissible Values: n/a 
+GatewayName: CTVMinDose 
+  
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 60 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  11006 
+Question Text: What volume of the bladder received 70 Gy in cc?  
+Instructions:  
+Type / Length / Format: Numeric 
+Permissible Values: n/a  
+GatewayName: BladderV70cc 
+ID #:  11007 
+Question Text: What percentage of the bladder received 70 Gy? 
+Instructions:  
+Type / Length / Format: Numeric 
+Permissible Values: n/a 
+GatewayName: BladderV70Percent 
+ID #:  11008 
+Question Text: What volume of the bladder received 40 Gy in cc? 
+Instructions:  
+Type / Length / Format: Numeric 
+Permissible Values: n/a 
+GatewayName: BladderV40cc 
+ID #:  11009 
+Question Text: What percentage of the bladder received 40 Gy? 
+Instructions:  
+Type / Length / Format: Numeric 
+Permissible Values: n/a 
+GatewayName: BladderV40Percent 
+ID #:  11010 
+Question Text: What volume of the rectum received 70 Gy in cc?  
+Instructions:  
+Type / Length / Format: Numeric 
+Permissible Values: n/a 
+GatewayName: RectumV70cc 
+ID #:  11011 
+Question Text: What percentage of the rectum received 70 Gy? 
+Instructions:  
+Type / Length / Format: Numeric 
+Permissible Values: n/a 
+GatewayName: RectumV70Percent 
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 61 of 62 
+ NROR Data Dictionary Version 3.0 
+ 
+ID #:  11012 
+Question Text: What volume of the rectum received 40 Gy in cc? 
+Instructions:  
+Type / Length / Format: Numeric 
+Permissible Values: n/a 
+GatewayName: RectumV40cc 
+ID #:  11013 
+Question Text: What percentage of the rectum received 40 Gy? 
+Instructions:  
+Type / Length / Format: Numeric 
+Permissible Values: n/a 
+GatewayName: RectumV40Percent 
+ 
+© 2013 Radiation Oncology Institute. All Rights Reserved.   Page 62 of 62 
