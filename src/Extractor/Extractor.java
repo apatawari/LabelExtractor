@@ -1,7 +1,6 @@
 package Extractor;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,33 +15,48 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import jxl.Workbook;
-import jxl.write.*;
-import jxl.write.biff.RowsExceededException;
 
 public class Extractor extends StopWords {
+	
+	
+	static final String DDName="CLSA";
+	
+	static List<String> Elements=new ArrayList<String>();
+
 	BufferedReader br = null;
 
-	String line = "";
-	
-	
+	static List<String> set = new ArrayList<String>();
 
-	public void read(String fileloc) throws IOException, WriteException {
+	List<String> subset = new ArrayList<String>();
+
+	ArrayList<String> lines = new ArrayList<String>();
+
+	Map<String, Integer> checkMapping = new HashMap<String, Integer>();
+
+	int rowNumber = 0;
+
+	String line = "";
+
+	private static Excel excel;
+
+	public void extractElements(String fileloc) throws Exception		{
 
 		String[] words;
-		
+
 		ArrayList<String> finalLines = new ArrayList<String>();
-		// ArrayList<String> finalList2 = new ArrayList<String>();
-		// add String data
+
 		try {
 
 			br = new BufferedReader(new FileReader(fileloc));
+
 			while ((line = br.readLine()) != null) {
 
-				// String [] x=line.split(" ");
-				if (!line.isEmpty()) {
-					// System.out.println(line);
+				if (line.length() > 2) {
+
+					lines.add(line);
+
 					line.replaceAll("[!@$.%^&*(),;}{+='/]", "");
+
 					String newline = removeStopword(line);
 
 					if (newline.length() > 1)
@@ -51,11 +65,16 @@ public class Extractor extends StopWords {
 						words = newline.split(" ");
 
 						finalLines.add(words[0]);
+
 						if (words.length > 1)
+
 							finalLines.add(words[0] + " " + words[1]);
+
 						if (words.length > 2)
+
 							finalLines.add(words[0] + " " + words[1] + " "
 									+ words[2]);
+
 					}
 
 				}
@@ -65,31 +84,53 @@ public class Extractor extends StopWords {
 			Set<String> unique = new HashSet<String>(finalLines);
 
 			int possibleCount = 0;
+
 			int possibleCountKey = 0;
+
 			// taking in consideration the Occurrence of the counts got
+
 			ArrayList<Integer> countOccur = new ArrayList<Integer>();
+
 			for (String key : unique) {
+
 				if (Collections.frequency(finalLines, key) > 100)
+
 					countOccur.add(Collections.frequency(finalLines, key));
+
 			}
+
 			Set<Integer> UniqueCount = new HashSet<Integer>(countOccur);
+
 			for (Integer key : UniqueCount) {
+
 				if (possibleCount < Collections.frequency(countOccur, key)) {
+
 					possibleCount = Collections.frequency(countOccur, key);
+
 					possibleCountKey = key;
 
 				}
+
 			}
 
 			ArrayList<String> elementNames = new ArrayList<String>();
+
 			for (String key : unique) {
+
 				if (Collections.frequency(finalLines, key) <= possibleCountKey + 5
+
 						&& Collections.frequency(finalLines, key) >= possibleCountKey - 5) {
+
 					elementNames.add(key);
+
 				}
+
 			}
-			List<String> Elements = getUnique(elementNames);
+
+			 Elements = getUnique(elementNames);
+
 			Elements.add("Comment");
+
 			Elements.add("Blanks");
 
 			// Content Extraction using the key words
@@ -100,7 +141,7 @@ public class Extractor extends StopWords {
 			 * JXL API is used for writing into the Excel
 			 */
 
-			getContent(Elements, fileloc);
+			getContent(Elements);
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -118,162 +159,185 @@ public class Extractor extends StopWords {
 
 	}
 
-	public static void main(String[] args) throws RowsExceededException,
-			WriteException, IOException {
-		
-		PDFManager pdfManager = new PDFManager();
-	       pdfManager.setFilePath("PDF/nacc.pdf");
-	       PrintWriter writer = new PrintWriter("OutputTextFile/output.txt", "UTF-8");
-	       writer.println(pdfManager.ToText());
-	      // System.out.println(pdfManager.ToText()); 
-	       writer.close();
-		Extractor extract = new Extractor();
-		
-		extract.read("OutputTextFile/output.txt");
-
-	}
-
 	public List<String> getUnique(List<String> lst) {
+		
 		List<String> uniq = new ArrayList<String>(lst);
+		
 		lst.forEach(elem -> uniq.removeIf(x -> !x.equals(elem)
+		
 				&& elem.contains(x)));
+		
 		return uniq;
 
 	}
 
-	public Map<String, Integer> createKeyValueListForElements(
-			List<String> Elements, WritableSheet sheet)
-			throws RowsExceededException, WriteException {
-		/*
-		 * Key value pair is to identify where the values should be placed
-		 * Corresponding elements in a row
-		 */
-
-		Map<String, Integer> map = new HashMap<String, Integer>();
-
-		for (int i = 0; i < Elements.size(); i++) {
-			// Add the created Cells to the sheet
-			Label label = new Label(i, 0, Elements.get(i));
-			sheet.addCell(label);
-
-			map.put(Elements.get(i), i);
-
-		}
-
-		return map;
-
-	}
-
-	public void getContent(List<String> Elements,
-			String fileloc) throws IOException, WriteException {
+	public void getContent(List<String> Elements) throws Exception
 		
-		File exlFile = new File("Generated_Excel_File/output_nacc.xls");
-		WritableWorkbook writableWorkbook = Workbook.createWorkbook(exlFile);
-		WritableSheet sheet = writableWorkbook.createSheet("Sheet1", 0);
+	 {
 
-		
-		Label label;
-		
-		Map<String, Integer> map = createKeyValueListForElements(Elements,sheet);
-		
-		// Declared to read line from the text file
+	// Declared to read line from the text file
+	
 		String line1 = "";
 
 		/*
 		 * These variables below are for row numbers and having consistency rows
 		 */
-		Map<String, Integer> checkMapping = new HashMap<String, Integer>();
-		for (int i = 0; i < Elements.size(); i++) {
-			checkMapping.put(Elements.get(i), 0);
-		}
-		int rowNumber = 3;
 
-	//	List<String> oneVariable = new ArrayList<String>();
-
-		// BufferedReader
-		br = new BufferedReader(new FileReader(fileloc));
-
-		// Main loop for getting line by line data analysis
-		int executed=0;
-		String str="";
-		while ((line1 = br.readLine()) != null) {
+		checkMapping = initializeMapping(Elements);
 		
-			if (!line1.contains("Page") && !line1.isEmpty()
-					&& !line1.contains("page")) {
-					
-				Matcher m = null;
-				for (int i = 0; i < Elements.size(); i++) {
-					Pattern p = Pattern.compile(Elements.get(i));
-					m = p.matcher(line1);
-					
-//					if(m.find() && !str.equals(""))
-//					{
-//						System.out.println("hello");
-//					}
-						 
-						if (m.find()) {
-						str="";
-						if (checkMapping.get(Elements.get(i))==0)
-						{
-							checkMapping.replace(Elements.get(i), 0, 1);
-						}
-						else{
-							
-							//call re-initialization method because element is re-encountered
-							checkMapping=initializeMapping(Elements);
-							rowNumber++;
-							checkMapping.replace(Elements.get(i), 0, 1);
-								
-							}
-						str=line1.replace(Elements.get(i), "");
-						
-						label = new Label(map.get(Elements.get(i)), rowNumber, str.trim());
-						sheet.addCell(label);
-						
-						}
-					else if (!str.equals("") && !m.find())
-					{
-						int pass=0;
-						//for multiple lines
-						for(int j=0;j<Elements.size();j++)
-						{
-							if(line1.contains(Elements.get(j)))
-							{ pass=1; }
-						}
-							
-						if (executed==0 && pass==0)
-						{
-						str=str+" "+line1.trim();
-						System.out.println(str);
-						executed=1;
-						}
-						
-					}
-					
-					
-					
-				}
+		// List<String> oneVariable = new ArrayList<String>();
+
+		int lineNumber = 0;
+		
+		String line2 = "";
+
+		while ((lineNumber < lines.size())) {
+		
+			line1 = lines.get(lineNumber);
+			
+			if ((lineNumber + 1) < lines.size())
+			
+				line2 = lines.get(lineNumber + 1);
+
+			if (!line1.contains("Page") && !line1.contains("page")){
+				
+				parseLine(line1, line2, Elements);
+				
+				lineNumber++;
+			} 
+			
+			else{
+			
+				lineNumber++;
+				
 			}
-			executed=0;
+
+		}
+		
+		
+
+	}
+
+	public Map<String, Integer> initializeMapping(List<String> Elements) {
+
+		Map<String, Integer> checkMapping = new HashMap<String, Integer>();
+		
+		for (int i = 0; i < Elements.size(); i++) {
+		
+			checkMapping.put(Elements.get(i), 0);
+		
+		}
+		
+		return checkMapping;
+
+	}
+
+	public void parseLine(String line1, String line2, List<String> Elements) {
+		
+		// find a match in line with element name
+		
+		boolean found = false;
+		
+		int foundElementLocation = 0;
+		
+		for (int i = 0; i < Elements.size(); i++) {
+
+		Pattern p = Pattern.compile(Elements.get(i));
+		
+		Matcher m = p.matcher(line1);
+
+		// if we get the element in the line, we take the position and flag
+		// out of it and break from the loop.
+		// else the default value we will have the default value as false
+		// and we should not use the location now.
+			
+		if (m.find()) {
+		
+			found = true;
+		
+			foundElementLocation = i;
+
+			break;
 			
 		}
-		writableWorkbook.write();
-		writableWorkbook.close();
-System.out.println("Excel File generated");
-	}
 
-public Map<String, Integer> initializeMapping(List<String> Elements)
-{
-	
-	Map<String, Integer> checkMapping = new HashMap<String, Integer>();
-	for (int i = 0; i < Elements.size(); i++) {
-		checkMapping.put(Elements.get(i), 0);
-	}
-	return checkMapping;
+		}
+
+		// now we have whether a Element is there in line or not.
+		// target is to retain the order with respect to element blocks in the
+		// file.
+
+		if (found) {
+		
+			if (checkMapping.get(Elements.get(foundElementLocation)) == 0) {
 			
-}
+				checkMapping.replace(Elements.get(foundElementLocation), 0, 1);
+			} 
+			
+			else {
+			
+				String finalString = "";
+				
+				for (String str : subset) {
+				
+					finalString = str + ";" + finalString;
+				
+				}
+				
+				set.add(finalString);
+				
+				subset.clear();
+				
+				checkMapping = initializeMapping(Elements);
+				
+				rowNumber++;
+				
+				checkMapping.replace(Elements.get(foundElementLocation), 0, 1);
+			
+			}
 
+			subset.add(line1);
+		
+		} 
+		else {
+		
+			String replacement = "";
+			
+			if (subset.size() > 0) {
+			
+				line1 = line1.replaceAll("\\s+", " ");
+				
+				replacement = subset.get(subset.size() - 1) + line1;
+				
+				subset.set(subset.size() - 1, replacement);
+			
+			}
+		
+		}
 
+	}
 
+	public static void main(String[] args) throws Exception {
+
+		PDFManager pdfManager = new PDFManager();
+		
+		pdfManager.setFilePath("DataDictionaries/Original/"+ DDName + ".pdf");
+		
+		PrintWriter writer = new PrintWriter("DataDictionaries/DDTextFormat/"+DDName+".txt","UTF-8");
+		
+		writer.println(pdfManager.ToText());
+		
+		
+		writer.close();
+		
+		Extractor extract = new Extractor();
+
+		extract.extractElements("DataDictionaries/DDTextFormat/"+DDName+".txt");
+		
+		excel = new Excel();
+		
+		Excel.writeDDExcell(DDName,set, Elements);
+		
+	}
 
 }

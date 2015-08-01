@@ -1,0 +1,338 @@
+1 
+ 
+DF= données fixes      DR = données ré actualisables.  Surligné en jaune les modifications des révisions  
+CIMA 27/1/2015 – CIMA et Glossaire accessibles sur les sites : http://www.banque-nationale-alzheimer.fr 
+                                                                                             http://www.innovation-alzheimer.fr/bna-fr/ 
+ 
+  Corpus d’Information Maladie d’Alzheimer CIMA 
+  
+ 
+DONNEES DU PATIENT 
+ 
+NOM d’usage:                  DF 
+   
+NOM de naissance:                  DF 
+Pour les utilisateurs du dossier Mobile Alzheimer (DmA) rentrer l’information seulement 
+ si ce nom est diffèrent  du nom d’usage 
+ 
+Prénom (de la carte vitale) :         DF 
+ 
+Date de naissance: JJ   MM  AAAA :                      DF 
+-  
+Département de naissance (sur carte vitale)      DF 
+ 
+Code de la commune de naissance       DF 
+ 
+Sexe  M   F                DF  
+ 
+Année de la première consultation :       DF 
+ 
+ 
+Nouveau patient 
+ Oui  NON Si NON  année de la 1° cs dans le centre : 
+ 
+(Non  obligatoire à remplir uniquement  par les utilisateurs de Calliope pour envoyer le CIMA) 
+ 
+Patient envoyé par :                DF 
+ 
+ Médecin généraliste   Neurologue  
+ Psychiatre  Gériatre 
+ Autre spécialiste  Direct 
+ Maison de retraite / EHPAD  CM 
+ CMRR  Service d’hospitalisation 
+ Urgences médicales   Services sociaux (caisse de retraite CCAS) 
+ CLIC  MAIA 
+ 
+2 
+ 
+DF= données fixes      DR = données ré actualisables.  Surligné en jaune les modifications des révisions  
+CIMA 27/1/2015 – CIMA et Glossaire accessibles sur les sites : http://www.banque-nationale-alzheimer.fr 
+                                                                                             http://www.innovation-alzheimer.fr/bna-fr/ 
+ 
+ 
+ 
+ 
+Caractéristiques de l’accompagnant        DR  
+ Conjoint  Enfant 
+ Bel enfant  Petits-enfants 
+ Neveu - Nièce  Frère - Soeur   
+ Curateur  Autres 
+ Aucun accompagnant  Sans informations ou non renseigné 
+ 
+ 
+Mode de vie actuel            DR    
+ A domicile seul sans famille à côté   A domicile seul avec famille à côté 
+ A domicile avec conjoint  A domicile dans sa famille 
+ A domicile SAI (sans autres indications)  Dans une famille d’accueil   
+ En foyer logement   Hospitalisation (court séjour, SSR, USLD) 
+ En maison de retraite médicalisée  En EHPAD 
+ En établissement psychiatrique   Autre 
+ 
+ 
+Situation géographique des patients par rapport à la localisation du centre           DR  
+ Dans une ville du CMRR ou du CM  
+(à moins de 50 km)  
+  A plus de 50 km du CMRR ou de la CM 
+  
+ A l’extérieur de la région   Dans un autre pays  
+ 
+  
+Niveau d’étude           DF  
+ Aucune scolarisation   Primaire (certificat d’étude)  
+ Secondaire (collège - CAP– brevet)   Secondaire (BEP - lycée – baccalauréat) 
+ Supérieur  Non renseigné 
+ 
+ 
+Profession – dernier métier exercé         DF  
+ agriculteur  Artisan 
+ Commerçant et chef d’entreprise  Cadre, profession intellectuelles supérieure 
+ Professions intermédiaires  Employé   
+ Ouvrier  Femme au foyer 
+3 
+ 
+DF= données fixes      DR = données ré actualisables.  Surligné en jaune les modifications des révisions  
+CIMA 27/1/2015 – CIMA et Glossaire accessibles sur les sites : http://www.banque-nationale-alzheimer.fr 
+                                                                                             http://www.innovation-alzheimer.fr/bna-fr/ 
+ Autres  En EHPAD 
+ En établissement psychiatrique   Sans informations ou non renseigné 
+ 
+       
+A.P.A             DR  
+ OUI  NON  Sans information 
+ 
+ 
+A.L.D            DR    
+ OUI  NON  Sans information 
+ 
+ 
+Mesure de protection          DR  
+ Sans  Tutelle  Curatelle  Sans Information 
+ 
+    
+         
+Diagnostic N1          DR  
+Choix possibles : 
+ 
+ Le patient à une Démence 
+ Le patient a des troubles cognitifs sans démence  
+ Autre cas    
+ Absence de trouble (révision 4 - 2015)  
+  
+ 
+ 
+ 
+  
+4 
+ 
+DF= données fixes      DR = données ré actualisables.  Surligné en jaune les modifications des révisions  
+CIMA 27/1/2015 – CIMA et Glossaire accessibles sur les sites : http://www.banque-nationale-alzheimer.fr 
+                                                                                             http://www.innovation-alzheimer.fr/bna-fr/ 
+Diagnostic N2                 DR  
+Liste diagnostics Fédération des CMRR 
+ 
+Libelle	  diagnostic Code Groupe	  de	  diagnostic 
+Maladie d'Alzheimer  F00.1 1 - Maladie d'Alzheimer 
+Démence  vasculaire F01.9 2 - Pathologies associées à la maladie d'Alzheimer 
+Autre démence vasculaire F01.8
+1 
+2 - Pathologies associées à la maladie d'Alzheimer 
+Démence mixte F00.2 2 - Pathologies associées à la maladie d'Alzheimer 
+Démence de la maladie de Parkinson F02.3 2 - Pathologies associées à la maladie d'Alzheimer 
+Démence à Corps de Lewy  F02.3
+4 
+2 - Pathologies associées à la maladie d'Alzheimer 
+Démence Fronto-temporale (DFT-vf)  F02.0 2 - Pathologies associées à la maladie d'Alzheimer 
+Démence sémantique (et autres DFT-vt)  G31.B 2 - Pathologies associées à la maladie d'Alzheimer 
+Aphasie progressive primaire G31.A 2 - Pathologies associées à la maladie d'Alzheimer 
+Atrophie corticale postérieure  G31.C 2 - Pathologies associées à la maladie d'Alzheimer 
+Paralysie supranucléaire progressive  G23.1 2 - Pathologies associées à la maladie d'Alzheimer 
+Dégénérescence Cortico Basale G23.8 2 - Pathologies associées à la maladie d'Alzheimer 
+Maladie de Huntington F02.2 2 - Pathologies associées à la maladie d'Alzheimer 
+Maladie de Creutzfeldt-Jakob F02.1 2 - Pathologies associées à la maladie d'Alzheimer 
+Hydrocéphalie à pression normale G91.2 2 - Pathologies associées à la maladie d'Alzheimer 
+Encéphalite Limbique G04.9 2 - Pathologies associées à la maladie d'Alzheimer 
+Démence du VIH  F02.4 2 - Pathologies associées à la maladie d'Alzheimer 
+Démence non classée ailleurs F0.3 2 - Pathologies associées à la maladie d'Alzheimer 
+Lésion vasculaire (AVC) F01.8 2 - Pathologies associées à la maladie d'Alzheimer 
+Diagnostic en attente  R418 3 - Diagnostic en attente 
+MCI amnésique F06.7
+A 
+4 - MCI 
+MCI Autres F06.7
+B 
+4 - MCI 
+Trouble anxieux (incluant l'ensemble des troubles 
+anxieux dont les TOC) 
+F41.9 5 - Dépression et autres troubles psychiatriques 
+Trouble dépressif isolés  F32.9 5 - Dépression et autres troubles psychiatriques 
+Troubles dépressifs récurrents F33.9 5 - Dépression et autres troubles psychiatriques 
+Trouble anxieux dépressifs  F41.2 5 - Dépression et autres troubles psychiatriques 
+Troubles psychotiques  F29 5 - Dépression et autres troubles psychiatriques 
+Etat de stress post traumatique F43.1 5 - Dépression et autres troubles psychiatriques 
+Autres troubles psychiatriques (amnésie, psychogène, 
+simulateur, ...) 
+F44.9 5 - Dépression et autres troubles psychiatriques 
+Trouble organique cérébral directement lié à l'utilisation 
+d'alcool ou autres toxiques 
+F10.6 5 - Dépression et autres troubles psychiatriques 
+5 
+ 
+DF= données fixes      DR = données ré actualisables.  Surligné en jaune les modifications des révisions  
+CIMA 27/1/2015 – CIMA et Glossaire accessibles sur les sites : http://www.banque-nationale-alzheimer.fr 
+                                                                                             http://www.innovation-alzheimer.fr/bna-fr/ 
+Trouble bipolaire (révision 4 - 2015) F31 5 - Dépression et autres troubles psychiatriques 
+Plainte mnésique R413 6 - Plainte mnésique 
+Autre troubles neurologiques (tumeurs, post 
+chirurgicaux, anévrysmes) 
+ F09 7 - Autres troubles neurologiques 
+Traumatisme crânien S06.9 7 - Autres troubles neurologiques 
+Épilepsie G40 7 - Autres troubles neurologiques 
+SEP  G35 7 - Autres troubles neurologiques 
+Maladie de Parkinson G20 7 - Autres troubles neurologiques 
+Trouble organique cérébral directement lié à une 
+pathologie (ex: Carences Métabolique - endocrinienne, 
+hépatique, respiratoire, SAS, rénale, Inflammatoire, 
+Cancéreuse) 
+F02.8 7 - Autres troubles neurologiques 
+Iatrogénie  F13 8 - Autres 
+ 
+   
+6 
+ 
+DF= données fixes      DR = données ré actualisables.  Surligné en jaune les modifications des révisions  
+CIMA 27/1/2015 – CIMA et Glossaire accessibles sur les sites : http://www.banque-nationale-alzheimer.fr 
+                                                                                             http://www.innovation-alzheimer.fr/bna-fr/ 
+ 
+DONNEES LIEES A L’ACTE 
+Date de l’acte :  /      /                       
+ 
+Type d’acte            DR  
+ Consultation unique  Consultation multidisciplinaire 
+ Consultation avec annonce diagnostic  Intervention infirmière 
+ Consultation multidisciplinaire  Intervention assistante sociale 
+ Consultation avec bilan neuropsychologique  Intervention psychologue 
+ Bilan neuropsychologique  Intervention orthophoniste 
+ Bilan neuropsychologique demandé par un 
+spécialiste libéral de ville (révision 3 du 1 
+février 2012)  
+ Groupe de patient (GP) 
+ Hôpital de jour bilan  Groupe de famille (GF) 
+ Hôpital de jour SSR   
+ 
+ 
+L’acte est réalisé dans le cadre de la mission de recours (pour CMRR uniquement) 
+ Oui          Non 
+ 
+ 
+Si oui Pourquoi ?          DR  
+ diagnostic difficile  suivi 
+ plateau technique  spécialité de l’expertise    
+ 
+  
+L’acte en cours est réalisé dans le cadre d’un protocole de recherche:   DR  
+ Oui  Non 
+ 
+ 
+Si oui Type de protocole de recherche       DR  
+ étude clinique non thérapeutique  Essai médicamenteux 
+ Essai non médicamenteux   Essai médicamenteux & non médicamenteux  
+ 
+ 
+Si oui de protocole de visite         DR  
+ Screening  Inclusion  visite de suivi 
+ 
+ 
+ 
+ 
+7 
+ 
+DF= données fixes      DR = données ré actualisables.  Surligné en jaune les modifications des révisions  
+CIMA 27/1/2015 – CIMA et Glossaire accessibles sur les sites : http://www.banque-nationale-alzheimer.fr 
+                                                                                             http://www.innovation-alzheimer.fr/bna-fr/ 
+ 
+CARACTERISATION PATIENT POUR ESSAIS CLINIQUE  (révision 4 –  2015) 
+ 
+ 
+ Présence et disponibilité d’un accompagnant O/N 
+ Autonomie suffisante pour se déplacer lors des 
+visites  
+O/N 
+ Absence de contre indication majeure à la 
+recherche (pathologie somatique non équilibrée, ATCD 
+de néoplasie active < 6 mois, insuffisance rénale ou 
+hépatique sévère, diagnostic de maladie psychiatrique 
+sévère)  
+O/N 
+ Acceptation du patient et de l’accompagnant 
+de participer à un essai thérapeutique versus 
+placebo  
+O/N 
+ 
+ 
+Examens dont les résultats ont été consultés le jour de l’acte (choix multiples possible) 
+            DR  
+ Aucun résultat au moment de l’acte  résultat de IRM 
+ résultat  du Scanner   résultat du SPECT  
+ résultat du PET  résultat des Bio marqueurs 
+ 
+ 
+Mini Mental Test:  /30        DR  
+  
+IADL:   Score détection      / 4                              DR 
+ 
+Traitements pharmacologiques (choix multiples possible)                DR  
+  
+ Aucun traitement pharmacologique  Aucun des traitements dans la liste   
+ Anti démentiel   
+(entourez - choix multiples possibles)  
+Aricept / Exelon / Reminyl / Ebixa ou génériques 
+  
+ Antidépresseurs  Neuroleptiques et antipsychotiques  
+ Anxiolytiques  Hypnotiques  
+ Nootropes  Autres traitements chroniques (entourez - choix 
+multiples possibles)  
+ 
+Antihypertenseur/ statine/ anti coagulant / anti 
+agrégant / antidiabétique / autre  
+ 
+        
+Effet indésirable grave          DR    
+8 
+ 
+DF= données fixes      DR = données ré actualisables.  Surligné en jaune les modifications des révisions  
+CIMA 27/1/2015 – CIMA et Glossaire accessibles sur les sites : http://www.banque-nationale-alzheimer.fr 
+                                                                                             http://www.innovation-alzheimer.fr/bna-fr/ 
+ Oui  Oui sans rapport avec le 
+traitement  
+ Non 
+ 
+ 
+Traitements non pharmacologiques (choix multiples possible)    DR  
+ Aucune prise en charge  Orthophoniste  
+ Psychologue    Kinésithérapeute 
+ Ergothérapeute   Plusieurs intervenants (groupe) 
+ Accueil de jour  MAIA  
+ CLIC   Plateforme de répits 
+ SIAD   Autres prise en charge 
+ Prise en charge par ESAD (révision 4 – 2015)  Prise en charge par un HDJ thérapeutique 
+(révision 4 – 2015) 
+ Prise en charge dans une UCC (révision 4 – 
+2015)  
+  
+ 
+ 
+Type de fin de suivi           DR  
+ Suivi en cours   
+ Déménagement    Entrée en institution  
+ Suivi par médecin traitant  Suivi par un autre centre du corpus  
+ Décès  Choix du patient 
+ Sans informations   
+ 
+ 
+Etat du suivi : (si choix différent que en cours) 
+ 
+Date d’entrée en institution, si entrée :  
+JJMMAA (1 champ à 6 chiffres) 
+Date de décès, si décès :  
+JJMMAA (1 champ à 6 chiffres) 
+
