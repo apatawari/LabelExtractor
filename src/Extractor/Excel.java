@@ -62,9 +62,9 @@ public class Excel {
 				
 				}
 			
-			System.out.println("\n");
 		}
 	     
+		System.out.println("Excel File Generated");
 		wworkbook.write();
 	    
 		wworkbook.close();

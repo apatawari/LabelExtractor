@@ -19,7 +19,9 @@ import java.util.regex.Pattern;
 public class Extractor extends StopWords {
 	
 	
-	static final String DDName="CLSA";
+	static final String DDName="nacc";
+	
+	static ArrayList<String> elementNames = new ArrayList<String>();
 	
 	static List<String> Elements=new ArrayList<String>();
 
@@ -27,19 +29,19 @@ public class Extractor extends StopWords {
 
 	static List<String> set = new ArrayList<String>();
 
-	List<String> subset = new ArrayList<String>();
+	static List<String> subset = new ArrayList<String>();
 
-	ArrayList<String> lines = new ArrayList<String>();
+	static ArrayList<String> lines = new ArrayList<String>();
 
-	Map<String, Integer> checkMapping = new HashMap<String, Integer>();
+	static Map<String, Integer> checkMapping = new HashMap<String, Integer>();
 
-	int rowNumber = 0;
+	static int rowNumber = 0;
 
 	String line = "";
 
 	private static Excel excel;
 
-	public void extractElements(String fileloc) throws Exception		{
+	public List<String> extractElements(String fileloc) throws Exception		{
 
 		String[] words;
 
@@ -90,13 +92,24 @@ public class Extractor extends StopWords {
 			// taking in consideration the Occurrence of the counts got
 
 			ArrayList<Integer> countOccur = new ArrayList<Integer>();
-
+			List<String> keys=new ArrayList<String>();
 			for (String key : unique) {
 
-				if (Collections.frequency(finalLines, key) > 100)
-
+				if (Collections.frequency(finalLines, key) > 100){
 					countOccur.add(Collections.frequency(finalLines, key));
-
+					//System.out.println(key);
+					
+				}else{
+					
+				keys.add(key);
+				
+				}
+			}
+			
+			for(int i=0;i<keys.size();i++)
+				
+			{
+				unique.remove(keys.get(i));
 			}
 
 			Set<Integer> UniqueCount = new HashSet<Integer>(countOccur);
@@ -113,25 +126,25 @@ public class Extractor extends StopWords {
 
 			}
 
-			ArrayList<String> elementNames = new ArrayList<String>();
+			
 
 			for (String key : unique) {
 
 				if (Collections.frequency(finalLines, key) <= possibleCountKey + 5
 
 						&& Collections.frequency(finalLines, key) >= possibleCountKey - 5) {
-
+					
 					elementNames.add(key);
 
 				}
 
 			}
-
 			 Elements = getUnique(elementNames);
+			// System.out.println(Elements);
 
-			Elements.add("Comment");
+			//Elements.add("Comment");
 
-			Elements.add("Blanks");
+			//Elements.add("Blanks");
 
 			// Content Extraction using the key words
 			/*
@@ -140,9 +153,10 @@ public class Extractor extends StopWords {
 			 * 
 			 * JXL API is used for writing into the Excel
 			 */
+			// System.out.println(Elements.size());
+			
 
-			getContent(Elements);
-
+			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -156,10 +170,11 @@ public class Extractor extends StopWords {
 				}
 			}
 		}
+		return Elements;
 
 	}
 
-	public List<String> getUnique(List<String> lst) {
+	public static List<String> getUnique(List<String> lst) {
 		
 		List<String> uniq = new ArrayList<String>(lst);
 		
@@ -171,7 +186,7 @@ public class Extractor extends StopWords {
 
 	}
 
-	public void getContent(List<String> Elements) throws Exception
+	public static void getContent(List<String> Elements) throws Exception
 		
 	 {
 
@@ -218,7 +233,7 @@ public class Extractor extends StopWords {
 
 	}
 
-	public Map<String, Integer> initializeMapping(List<String> Elements) {
+	public static Map<String, Integer> initializeMapping(List<String> Elements) {
 
 		Map<String, Integer> checkMapping = new HashMap<String, Integer>();
 		
@@ -232,7 +247,7 @@ public class Extractor extends StopWords {
 
 	}
 
-	public void parseLine(String line1, String line2, List<String> Elements) {
+	public static void parseLine(String line1, String line2, List<String> Elements) {
 		
 		// find a match in line with element name
 		
@@ -242,6 +257,8 @@ public class Extractor extends StopWords {
 		
 		for (int i = 0; i < Elements.size(); i++) {
 
+		try{
+			
 		Pattern p = Pattern.compile(Elements.get(i));
 		
 		Matcher m = p.matcher(line1);
@@ -261,6 +278,9 @@ public class Extractor extends StopWords {
 			
 		}
 
+		}
+		catch(Exception e)
+		{}
 		}
 
 		// now we have whether a Element is there in line or not.
@@ -332,7 +352,20 @@ public class Extractor extends StopWords {
 		
 		Extractor extract = new Extractor();
 
-		extract.extractElements("DataDictionaries/DDTextFormat/"+DDName+".txt");
+		Elements=extract.extractElements("DataDictionaries/DDTextFormat/"+DDName+".txt");
+		
+		System.out.println(Elements.size());
+		
+		if(Elements.size()>3)
+		{
+			//run the labeled extractor 
+		getContent(Elements);
+		}
+		else
+		{
+			// run the unlabeled Extractor
+		}
+		
 		
 		excel = new Excel();
 		
